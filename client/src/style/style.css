@@ -1,0 +1,308 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Montserrat", serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+
+
+#navbar{
+    height: 7vh;
+    background-color: white;
+    box-shadow: 0 0 5px #80808092;
+    position: sticky;
+    top: 0;
+    z-index: 2;
+}
+
+#navbar a{
+    font-weight: 700;
+    font-size: 1.3rem;
+    color: #1677ff;
+}
+#form{
+    width: 500px;
+    padding: 25px;
+    margin: 50px auto;
+    box-shadow: 1px 1px 10px #c2c0c092;
+    border: 1px solid #8080806c;
+    border-radius: 10px;
+}
+
+
+#select{
+    margin-right: 20px;
+    padding: 7px;
+    width: 150px;
+    border-radius: 5px;
+    border: 1px solid white;
+    box-shadow: 0 0 1px grey;   
+    color: #3b3b3b;
+    outline: none;
+}
+
+#select:hover{
+    border: 1px solid blue;
+}
+
+#footer{
+    box-shadow: 0 0 5px #80808092;
+    color: #3b3b3b;
+}
+#footer a{
+    font-weight: 400;
+    text-decoration: none;
+    color: #3b3b3b;
+}
+#footer a:hover{
+    text-decoration: underline;
+}
+
+/* Admin Dashboard */
+
+#hero{
+    height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+#hero #nav{
+    margin-top: 5px;
+    width: 17%;
+    height: 62vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+    gap: 15px;
+    /* border: 1px solid #80808092; */
+    box-shadow: 0px 0px 3px #80808092;
+    padding: 30px 0px 0px 0px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    /* background-color: dodgerblue; */
+}
+
+#hero #nav a{
+    padding: 6px;
+    width: 200px;
+    text-align: center;
+    border-radius: 30px;
+    font-weight: 500;
+    box-shadow: 0 0 2px #fff;
+    font-size: 14px;
+    color: white;
+    background-color: #1677ff;
+}
+#hero #nav a:hover{
+    background-color: #004eba;
+    color: white;
+}
+#hero #nav a:focus{
+    background-color: #004eba;
+    color: #fff;
+}
+
+#hero #data{
+    width: 75%;
+    height: 60vh;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+    /* background-image: url('https://robisearch.com/wp-content/uploads/2021/05/Task-Logo-fullcol-Copy-561x480.png');
+    background-position: center;
+    background-size: 120px;
+    background-repeat: no-repeat; */
+}
+
+#display{
+    width: 100%;
+    height: 50vh;
+    padding: 10px 0px;
+}
+
+/* assign task */
+textarea{
+    border-radius: 10px;
+    border: 1px solid #80808092;
+    outline: none;
+    padding: 2px 10px;
+}
+
+h2{
+    color: #1677ffc7;
+}
+
+
+/* profile */
+
+#profile{
+    height: 50vh;
+    text-align: start;
+}
+
+#profileimg{
+    padding: 10px 0px;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    gap: 20px;
+}
+#photo{
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    box-shadow: 0 0 2px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    overflow: hidden;
+}
+#photo img{
+    object-fit: cover;
+}
+
+#usertask{
+    height: 50vh;
+    width: 80%;
+    padding: 10px;
+    display: flex;
+    text-align: start;
+    flex-direction: column;
+    align-items: start;
+    justify-content: start;
+}
+#usertask b{
+    color: #3b3b3b;
+}
+#usertask p{
+    font-weight: 500;
+}
+
+#pass{
+    filter: blur(4px);
+    transition: .5s;
+}
+#pass:hover{
+    filter: none;
+    transition: .8s;
+    cursor: default;
+}
+
+/* Dashboard buttons */
+
+#dashboard-btn{
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: end;
+    align-items: center;
+    gap: 15px;
+    width: 95%;
+    margin: auto;
+}
+
+#search{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    padding: 5px 0px;
+}
+#search input{
+    width: 250px;
+    height: 35px;
+    padding: 6px 10px;
+}
+
+/* task status */
+#taskstatus td{
+    text-align: start;
+    align-content: center;
+}
+
+/* for responsive */
+
+@media (min-width: 376px) and (max-width: 767.98px) {
+    #hero {
+        height: 110vh;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    #hero #nav {
+        width: 80%;
+        height: 50vh;
+        margin-bottom: 20px;
+        border-radius: 10px;
+    }
+
+    #hero #data {
+        width: 80%;
+        height: 120vh;
+    }
+    #dashboard-btn{
+        justify-content: center;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+    #form{
+        width: 100%;
+        padding: 25px;
+        margin: 50px auto;
+        box-shadow: 1px 1px 10px #c2c0c092;
+        border-radius: 10px;
+    }
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) and (max-width: 991.98px) {
+    #hero {
+        flex-direction: row; /* Back to row layout */
+        text-align: left; /* Reset text alignment */
+    }
+    #hero #nav {
+        width: 25%;
+        margin-bottom: 0;
+    }
+    #hero #nav  a{
+        width: 90%;
+    }
+     #hero #data {
+        width: 60%;
+    }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) and (max-width: 1199.98px) {
+    #hero {
+        flex-direction: row;
+        text-align: left;
+    }
+    #hero #nav {
+        width: 25%;
+
+    }
+     #hero #data {
+        width: 65%;
+    }
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+     #hero {
+        flex-direction: row;
+        text-align: left;
+    }
+     #hero #data {
+        width: 70%;
+    }
+}
