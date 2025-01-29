@@ -9,6 +9,12 @@
     font-style: normal;
 }
 
+#home{
+    background-image: url('https://static.vecteezy.com/system/resources/previews/012/827/989/large_2x/abstract-water-wave-illustration-design-background-free-vector.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
 
 #navbar{
     height: 7vh;
@@ -24,6 +30,7 @@
     font-size: 1.3rem;
     color: #1677ff;
 }
+
 #form{
     width: 500px;
     padding: 25px;
@@ -31,6 +38,7 @@
     box-shadow: 1px 1px 10px #c2c0c092;
     border: 1px solid #8080806c;
     border-radius: 10px;
+    background-color: transparent;
 }
 
 
@@ -117,10 +125,6 @@
     flex-direction: column;
     align-items: center;
     justify-content: start;
-    /* background-image: url('https://robisearch.com/wp-content/uploads/2021/05/Task-Logo-fullcol-Copy-561x480.png');
-    background-position: center;
-    background-size: 120px;
-    background-repeat: no-repeat; */
 }
 
 #display{
@@ -274,6 +278,11 @@ h2{
         margin: 50px auto;
         box-shadow: 1px 1px 10px #c2c0c092;
         border-radius: 10px;
+    }
+    #dashboard-btn {
+        position: relative;
+        top: 0px;
+        z-index: 1;
     }
 }
 

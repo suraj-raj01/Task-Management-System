@@ -3,6 +3,7 @@ import { Form, Input, message, Modal } from "antd";
 import { useNavigate } from "react-router-dom";
 import Button from "react-bootstrap/Button";
 import axios from "axios";
+import bgimg from "../images/backgroundimg.png"
 
 const onFinish = (values) => {
   console.log("Success:", values);
@@ -82,7 +83,7 @@ const Home = () => {
   };
 
   return (
-    <div>
+    <div id='home'>
       <h6
         onClick={header}
         className="text-start "

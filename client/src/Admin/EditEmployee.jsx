@@ -95,6 +95,8 @@ const EditEmp = () => {
           <option value="Team Leader">Team Leader</option>
           <option value="UI/UX Designer">UI/UX Designer</option>
           <option value="Data Analyst">Data Analyst</option>
+          <option value="Database Engineer">Database Engineer</option>
+          <option value="Backend Developer">Backend Developer</option>
         </select>
         </Form.Item>
 
