@@ -120,11 +120,11 @@ const editSaveEmployee = async (req, res) => {
 // upload photo for profile
 
 const uploadPhoto = async (req, res) => {
-    const { photo, id } = req.body;
+    const {id } = req.body;
     const profileimg = req.file.filename;
     try {
         const Data = await ProfilePhoto.create({
-            id: id,
+            id:id,
             imgname: profileimg
         })
         const Photo = await ProfilePhoto.findOne({ id: Data.id });
@@ -179,6 +179,22 @@ const searchEmployee = async(req,res) =>{
     }
 }
 
+const resetPassword = async(req,res)=>{
+    const {useremail,oldpassword,newpassword} = req.body;
+    try {
+        const Data = await EmployeeModel.findOne({empemail:useremail});
+        if(Data.password!=oldpassword){
+            res.status(400).json("Please enter correct password!!");
+        }
+        await EmployeeModel.findByIdAndUpdate(Data._id,{
+            password:newpassword
+        });
+        res.status(200).json("Password updated !!!")
+    } catch (error) {
+        res.status(400).json("something went wrong!!")
+    }
+}
+
 module.exports = {
     adminLogin,
     userSave,
@@ -191,5 +207,6 @@ module.exports = {
     assginTask,
     taskStatus,
     displayUserTask,
-    searchEmployee
+    searchEmployee,
+    resetPassword
 }

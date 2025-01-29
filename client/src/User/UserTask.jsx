@@ -12,7 +12,6 @@ const UserTask = () => {
     try {
       const response = await axios.post(api,{Id:localStorage.getItem("employeeid")});
       setMydata(response.data);
-      console.log(response.data); 
     } catch (error) {
       message.error(error.response.data.msg);
     }

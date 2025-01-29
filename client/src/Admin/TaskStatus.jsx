@@ -4,14 +4,14 @@ import React, { useEffect, useState } from "react";
 import Table from "react-bootstrap/Table";
 import Button from "react-bootstrap/Button";
 import { useNavigate } from "react-router-dom";
-import Form from 'react-bootstrap/Form';
+import Form from "react-bootstrap/Form";
 
 const TaskStatus = () => {
 
-  const[mydata,setMydata] = useState([]);
+  const [mydata, setMydata] = useState([]);
 
-  const loadData=async()=>{
-    let api = 'http://localhost:8000/admin/taskstatus';
+  const loadData = async () => {
+    let api = "http://localhost:8000/admin/taskstatus";
     try {
       const response = await axios.get(api);
       setMydata(response.data);
@@ -19,25 +19,24 @@ const TaskStatus = () => {
     } catch (error) {
       message.error(error.response.data.msg);
     }
-  }
-  useEffect(()=>{
+  };
+  useEffect(() => {
     loadData();
-  },[])
+  }, []);
 
-  let sno=0;
-  const res = mydata.map((key)=>{
+  let sno = 0;
+  const res = mydata.map((key) => {
     sno++;
-    return(<>
-      <tr id="taskstatus">
-        <td className="text-center">{sno}</td>
-        <td>{key.empid.empemail}</td>
-        <td>{key.empid.designation}</td>
-        <td>
-         <details>
-          <summary className="text-center">Show Details</summary>
-          <Table bordered hover responsive striped>
+    return (
+      <>
+        <tr id="taskstatus">
+          <td className="text-center">{sno}</td>
+          <td>{key.empid.empemail}</td>
+          <td>{key.empid.designation}</td>
+          <td className="text-center">
+          <Table responsive width='20%'>
             <thead>
-              <tr>
+              <tr id="taskdetails">
                 <th>Title</th>
                 <th>Descriptionn</th>
                 <th>Deadline</th>
@@ -47,16 +46,19 @@ const TaskStatus = () => {
               <tr>
                 <td>{key.tasktitle}</td>
                 <td>{key.description}</td>
-                <td style={{textAlign:'center',fontWeight:'bold'}}>{key.completiondays}</td>
+                <td style={{textAlign:'center'}}>{key.completiondays}</td>
               </tr>
             </tbody>
           </Table>
-          </details>
-        </td>
-        <td className="text-center"><Button size="sm">complete</Button></td>
-      </tr>
-    </>)
-  })
+          </td>
+          {/* <td className="text-center">
+            <i class="far fa-circle-check"></i> &nbsp;&nbsp;
+            <i class="far fa-circle-xmark"></i>
+          </td> */}
+        </tr>
+      </>
+    );
+  });
 
   return (
     <>
@@ -69,23 +71,23 @@ const TaskStatus = () => {
             className="me-1"
             aria-label="Search"
           />
-          <Button size="sm" variant="primary"><i class="fas fa-magnifying-glass"></i> Search</Button>
+          <Button size="sm" variant="primary">
+            <i class="fas fa-magnifying-glass"></i> Search
+          </Button>
         </Form>
       </div>
-      <div id="display">
-        <Table bordered hover responsive striped>
+      <div id="display" style={{overflowY:'scroll'}}>
+        <Table bordered responsive>
           <thead>
-            <tr>
+            <tr id="tablehead">
               <th>S.No</th>
               <th>Employee Id</th>
-              <th>Designation</th>
+              <th style={{width:'140px'}}>Designation</th>
               <th>Task Details</th>
-              <th>Task Status</th>
+              {/* <th style={{width:'140px'}}>Task Status</th> */}
             </tr>
           </thead>
-          <tbody>
-            {res}
-          </tbody>
+          <tbody>{res}</tbody>
         </Table>
       </div>
     </>

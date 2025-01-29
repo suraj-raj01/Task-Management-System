@@ -10,7 +10,6 @@ const DisplayUser = () => {
   const navigate = useNavigate();
   const[mydata,setMydata] = useState([]);
 
-  
   const loadData=async()=>{
     let api='http://localhost:8000/admin/displayuser';
     try {
@@ -19,26 +18,12 @@ const DisplayUser = () => {
     } catch (error) {
       message.error(error)
     }
+    setIsVisible(true)
   }
 
   useEffect(()=>{
     loadData();
   },[])
-
-
-  const [empname,setEmpName] = useState("");
-  const[searchData,setSearchData] = useState([]);
-  const searchEmp = async(e) =>{
-    let name = e.target.value;
-    setEmpName(name);
-    let api='http://localhost:8000/admin/searchemployee'
-    try {
-      const response = await axios.post(api,{empname:empname});
-      setSearchData(response.data);
-    } catch (error) {
-      message.error(error.response.data.msg);
-    }
-  }
 
   const taskAssign=(id)=>{
     navigate(`/admindashboard/assigntask/${id}`);
@@ -46,23 +31,6 @@ const DisplayUser = () => {
 
   let sno=0;
   const res = mydata.map((key)=>{
-    sno++;
-    return(
-      <>
-      <tr>
-        <td>{sno}</td>
-        <td>{key.empname.toUpperCase()}</td>
-        <td>{key.empemail}</td>
-        <td>{key.designation}</td>
-        <td>
-          <Button variant='primary' size='sm' onClick={()=>{taskAssign(key._id)}}><i class="fas fa-plus"></i>&nbsp; Assign Task</Button>
-        </td>
-      </tr>
-      </>
-    )
-  })
-
-  const res1 = searchData.map((key)=>{
     sno++;
     return(
       <>
@@ -89,8 +57,6 @@ const DisplayUser = () => {
             placeholder="Search employee..."
             className="me-1"
             aria-label="Search"
-            value={empname}
-            onChange={searchEmp}
           />
           <Button size="sm" variant="primary"><i class="fas fa-magnifying-glass"></i> Search</Button>
         </Form>
