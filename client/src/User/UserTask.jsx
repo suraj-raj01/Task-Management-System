@@ -7,10 +7,11 @@ import { message } from 'antd'
 const UserTask = () => {
   const navigate = useNavigate();
   const[mydata,setMydata] = useState({});
+
   const loadData=async()=>{
     let api='http://localhost:8000/admin/displayusertask';
     try {
-      const response = await axios.post(api,{Id:localStorage.getItem("employeeid")});
+      const response = await axios.post(api,{Id:localStorage.getItem("empid")});
       setMydata(response.data);
     } catch (error) {
       message.error(error.response.data.msg);

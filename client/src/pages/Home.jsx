@@ -54,6 +54,7 @@ const Home = () => {
           localStorage.setItem("employeeid", response.data.empemail);
           localStorage.setItem("designation", response.data.designation);
           localStorage.setItem("empPass", response.data.password);
+          localStorage.setItem("empid", response.data._id);
           navigate("/userdashboard");
         }
       } catch (error) {
