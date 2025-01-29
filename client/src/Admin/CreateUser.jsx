@@ -1,5 +1,5 @@
-import React, { useState } from 'react'
-import { Button, Form, Input, message } from "antd";
+import React, { useEffect, useState } from 'react'
+import { Button, Form, Input, message, Spin} from "antd";
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 const onFinish = (values) => {
@@ -12,6 +12,7 @@ const onFinishFailed = (errorInfo) => {
 const CreateUser = () => {
   const navigate = useNavigate();
   const[input,setInput] = useState({});
+  const[isVisible,setIsvisible] = useState(false);
 
   const handleInput=(e)=>{
     const name = e.target.name;
@@ -29,13 +30,25 @@ const CreateUser = () => {
     } catch (error) {
       message.error(error.response.data.msg);
     }
+    setIsvisible(true);
   }
+
+  useEffect(()=>{
+    setTimeout(()=>{
+      setIsvisible(false);
+    },1200)
+    setIsvisible(true);
+  },[])
 
   return (
     <>
         {/* <h1>CreateUser</h1> */}
-
-        <Form
+        {isVisible?(
+          <center style={{color:'#1677ff',marginTop:'150px'}}>
+           <Spin size='large'/>
+          </center>
+        ):(
+          <Form
         id="form"
         name="basic"
         labelCol={{ span: 6 }}
@@ -91,6 +104,8 @@ const CreateUser = () => {
           </Button>
         </Form.Item>
       </Form>
+        )}
+        
     </>
   )
 }

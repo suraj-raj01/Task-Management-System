@@ -1,46 +1,27 @@
 import { message } from "antd";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import { useNavigate } from "react-router-dom";
+
 const AdminProfile = () => {
-  const navigate = useNavigate();
-  const [myfile, setMyfile] = useState("");
-  const handleFile = (e) => {
-    setMyfile(e.target.files[0]);
+  const [admin, setAdmin] = useState("");
+  const [adminid, setAdminId] = useState("");
+  const [password, setPassword] = useState("");
+
+  const loadData = () => {
+    if (adminid == null) {
+      navigate("/home");
+    } else {
+      setAdmin(localStorage.getItem("admin"));
+      setAdminId(localStorage.getItem("adminId"));
+      setPassword(localStorage.getItem("adminPass"));
+    }
   };
 
-  const handleSubmit = async(id) =>{
-    let formData = new FormData();
-    if(myfile==""){
-      message.error("please select profile photo")
-    }else{
-    formData.append("photo",myfile);
-    formData.append("id",id);
-    let api = 'http://localhost:8000/admin/uploadphoto';
-    try {
-      const response = await axios.post(api,formData);
-      console.log(response.data);
-      message.success("profile photo saved!!");
-      localStorage.setItem("showImg",response.data.imgname);
-      document.querySelector("#file").style.display="none";
-      document.querySelector("#btnfile").style.display="none";
-      document.querySelector("#remove").style.display="block";
-      navigate("/admindashboard/adminprofile");
-    } catch (error) {
-      message.error(error);
-    }
-  }
-  }
-
-  const removePhoto=()=>{
-        document.querySelector("#file").style.display="block";
-        document.querySelector("#btnfile").style.display="block";
-        document.querySelector("#remove").style.display="none";
-        localStorage.removeItem("showImg");
-        message.success("Profile photo removed!!")
-        navigate("/admindashboard")
-      }
+  useEffect(() => {
+    loadData();
+  }, []);
 
   return (
     <>
@@ -49,20 +30,21 @@ const AdminProfile = () => {
         <hr />
         <div id="profileimg">
           <div id="photo">
-          <img src={`http://localhost:8000/uploads/${localStorage.getItem("showImg")}`} alt="" height='100%' width='100%'/>
+            <img
+              src="https://t3.ftcdn.net/jpg/01/21/24/20/360_F_121242015_hRYuVPJmzhWQdvrkh3dk5MqjNxY3JzTr.jpg"
+              alt=""
+              height="100%"
+              width="100%"
+            />
           </div>
-          <Form className="d-flex">
-          <input type="file" id='file' onChange={handleFile}/>
-               <Button id='btnfile' size='sm' style={{width:'80px',display:'block'}} onClick={()=>{handleSubmit(Date.now())}}>Save</Button>
-               <Button id='remove' variant='danger' size='sm' style={{display:'none'}} onClick={removePhoto}>Remove photo</Button>
-          </Form>
+         
         </div>
+
         <br />
-        <h5>Admin Name : {localStorage.getItem("admin")}</h5>
-        <h5>Admin Id : {localStorage.getItem("adminId")}</h5>
+        <h5>Admin Name : {admin}</h5>
+        <h5>Admin Id : {adminid}</h5>
         <h5>
-          Admin Password :{" "}
-          <span id="pass">{localStorage.getItem("adminPass")}</span>
+          Admin Password : <span id="pass">{password}</span>
         </h5>
       </div>
     </>

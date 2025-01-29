@@ -110,7 +110,7 @@
 }
 
 #hero #data{
-    width: 75%;
+    width: 80%;
     height: 60vh;
     text-align: center;
     display: flex;
@@ -125,7 +125,7 @@
 
 #display{
     width: 100%;
-    height: 50vh;
+    height: 60vh;
     padding: 10px 0px;
 }
 
@@ -207,6 +207,9 @@ h2{
     gap: 15px;
     width: 95%;
     margin: auto;
+    position: sticky;
+    top: 10px;
+    z-index: 2;
 }
 
 #search{
@@ -226,6 +229,17 @@ h2{
 #taskstatus td{
     text-align: start;
     align-content: center;
+}
+
+#taskdetails th{
+    text-align: start;
+    font-weight: 500;
+    color: #004eba;
+}
+#tablehead th{
+    background-color: #1677ff;
+    font-weight: 500;
+    color: white;
 }
 
 /* for responsive */
