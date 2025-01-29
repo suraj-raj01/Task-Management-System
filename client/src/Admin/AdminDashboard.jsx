@@ -30,7 +30,7 @@ const AdminDashboard = () => {
   }
 
   const profile=()=>{
-    navigate("/admindashboard");
+    navigate("/admindashboard/adminprofile");
   }
 
   const Home=()=>{

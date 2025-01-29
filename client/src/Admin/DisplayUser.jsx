@@ -18,7 +18,6 @@ const DisplayUser = () => {
     } catch (error) {
       message.error(error)
     }
-    setIsVisible(true)
   }
 
   useEffect(()=>{

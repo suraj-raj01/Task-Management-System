@@ -8,7 +8,7 @@ import Form from "react-bootstrap/Form";
 
 const TaskStatus = () => {
 
-  const [mydata, setMydata] = useState([]);
+  const[mydata, setMydata] = useState([]);
 
   const loadData = async () => {
     let api = "http://localhost:8000/admin/taskstatus";
@@ -34,11 +34,11 @@ const TaskStatus = () => {
           <td>{key.empid.empemail}</td>
           <td>{key.empid.designation}</td>
           <td className="text-center">
-          <Table responsive width='20%'>
+          <Table responsive bordered width='20%'>
             <thead>
               <tr id="taskdetails">
-                <th>Title</th>
-                <th>Descriptionn</th>
+                <th>Task</th>
+                <th>Description</th>
                 <th>Deadline</th>
               </tr>
             </thead>

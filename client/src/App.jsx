@@ -24,6 +24,7 @@ const App = () => {
             <Route path="home" element={<Home />} />
             <Route path="admindashboard" element={<AdminDashboard />}>
               <Route index element={<AdminProfile />} />
+              <Route path="adminprofile" element={<AdminProfile />} />
               <Route path="createuser" element={<CreateUser />} />
               <Route path="displayuser" element={<DisplayUser />} />
               <Route path="assigntask/:id" element={<AssignTask />} />
