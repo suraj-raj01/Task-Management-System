@@ -120,7 +120,7 @@ const editSaveEmployee = async (req, res) => {
 // upload photo for profile
 
 const uploadPhoto = async (req, res) => {
-    const {id } = req.body;
+    const {id} = req.body;
     const profileimg = req.file.filename;
     try {
         const Data = await ProfilePhoto.create({
