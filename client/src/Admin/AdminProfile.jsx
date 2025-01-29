@@ -43,9 +43,9 @@ const AdminProfile = () => {
         <br />
         <h5>Admin Name : {admin}</h5>
         <h5>Admin Id : {adminid}</h5>
-        <h5>
+        {/* <h5>
           Admin Password : <span id="pass">{password}</span>
-        </h5>
+        </h5> */}
       </div>
     </>
   );

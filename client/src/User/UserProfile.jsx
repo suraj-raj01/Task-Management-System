@@ -20,7 +20,7 @@ const UserProfile = () => {
         setUsername(localStorage.getItem("employee"));
         setUserid(localStorage.getItem("employeeid"));
         setPassword(localStorage.getItem("empPass"));
-        setDesignation(localStorage.getItem("designation"))
+        setDesignation(localStorage.getItem("designation"));
       }
     }
   
@@ -81,10 +81,11 @@ const UserProfile = () => {
                <Button id='remove' variant='danger' size='sm' style={{display:'none'}} onClick={removePhoto}>Remove photo</Button>
                </Form>
             </div>
+            <br />
             <h5>Employee Name : {username.toUpperCase()}</h5>
             <h5>EmployeeId : {userid}</h5>
             <h5>Designation : {designation}</h5>
-            <h5>Password : <span id='pass'>{password}</span></h5>
+            {/* <h5>Password : <span id='pass'>{password}</span></h5> */}
             
             
         </div>
