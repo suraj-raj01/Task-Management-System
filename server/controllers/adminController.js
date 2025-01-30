@@ -161,7 +161,7 @@ const taskStatus = async(req,res)=>{
 const displayUserTask = async(req,res)=>{
     const {Id} = req.body;
     try {
-        const Data = await TaskModel.findOne({empid:Id});
+        const Data = await TaskModel.find({empid:Id});
         res.status(200).send(Data);
     } catch (error) {
         res.status(400).send({msg:"something went wrong!!"})

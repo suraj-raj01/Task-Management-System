@@ -7,8 +7,17 @@
     font-family: "Montserrat", serif;
     font-optical-sizing: auto;
     font-style: normal;
+    scrollbar-width: thin; /* Width of the scrollbar */
+    scrollbar-color: #5f5f5f92 #fff;
 }
 
+#home{
+    /* background-image: url('https://img.freepik.com/premium-vector/abstract-modern-white-grey-gradient-color-geometric-line-pattern-background-graphic-design_120819-935.jpg?w=2000'); */
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 82vh;
+}
 
 #navbar{
     height: 7vh;
@@ -24,6 +33,7 @@
     font-size: 1.3rem;
     color: #1677ff;
 }
+
 #form{
     width: 500px;
     padding: 25px;
@@ -31,13 +41,14 @@
     box-shadow: 1px 1px 10px #c2c0c092;
     border: 1px solid #8080806c;
     border-radius: 10px;
+    background-color: transparent;
 }
 
 
 #select{
     margin-right: 20px;
-    padding: 7px;
-    width: 150px;
+    padding: 6px;
+    width: 180px;
     border-radius: 5px;
     border: 1px solid white;
     box-shadow: 0 0 1px grey;   
@@ -50,8 +61,12 @@
 }
 
 #footer{
-    box-shadow: 0 0 5px #80808092;
+    /* background-image: url('https://img.freepik.com/premium-vector/abstract-white-geometric-shape-pattern-with-gradient-color-background_120819-1712.jpg'); */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
     color: #3b3b3b;
+    box-shadow: 0 0 1px;
 }
 #footer a{
     font-weight: 400;
@@ -117,10 +132,6 @@
     flex-direction: column;
     align-items: center;
     justify-content: start;
-    /* background-image: url('https://robisearch.com/wp-content/uploads/2021/05/Task-Logo-fullcol-Copy-561x480.png');
-    background-position: center;
-    background-size: 120px;
-    background-repeat: no-repeat; */
 }
 
 #display{
@@ -170,16 +181,42 @@ h2{
     object-fit: cover;
 }
 
+#usertasklyt{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: start;
+    padding: 5px;
+    gap: 15px;
+    overflow-y: scroll;
+}
 #usertask{
-    height: 50vh;
-    width: 80%;
+    width: 45%;
     padding: 10px;
     display: flex;
     text-align: start;
     flex-direction: column;
     align-items: start;
     justify-content: start;
+    border-radius: 10px;
+    box-shadow: 0 0 5px #80808092;
 }
+
+#usertask span{
+    border: 1px solid;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px;
+    background-color: #3b3b3b;
+    color: white;
+    font-weight: 500;
+}
+
 #usertask b{
     color: #3b3b3b;
 }
@@ -246,7 +283,7 @@ h2{
 
 @media (min-width: 376px) and (max-width: 767.98px) {
     #hero {
-        height: 110vh;
+        height: 125vh;
         flex-direction: column;
         align-items: center;
         text-align: center;
@@ -254,7 +291,7 @@ h2{
 
     #hero #nav {
         width: 80%;
-        height: 50vh;
+        height: 60vh;
         margin-bottom: 20px;
         border-radius: 10px;
     }
@@ -275,6 +312,15 @@ h2{
         box-shadow: 1px 1px 10px #c2c0c092;
         border-radius: 10px;
     }
+    #dashboard-btn {
+        position: relative;
+        top: 0px;
+        z-index: 1;
+    }
+    #usertask {
+        width: 100%; /* Adjusts width for smaller screens */
+        height: auto; /* Allows height to adjust dynamically */
+    }
 }
 
 /* Medium devices (tablets, 768px and up) */
@@ -293,6 +339,12 @@ h2{
      #hero #data {
         width: 60%;
     }
+    #usertasklyt{
+        overflow-y: scroll;
+    }
+    #usertask {
+        width: 90%; /* Adjusts width for tablets */
+    }
 }
 
 /* Large devices (desktops, 992px and up) */
@@ -307,6 +359,12 @@ h2{
     }
      #hero #data {
         width: 65%;
+    }
+    #usertasklyt{
+        overflow-y: scroll;
+    }
+    #usertask {
+        width: 70%; /* Adjusts width for tablets */
     }
 }
 
