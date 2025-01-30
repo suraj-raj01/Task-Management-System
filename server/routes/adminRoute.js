@@ -28,5 +28,6 @@ route.post("/displayusertask",adminController.displayUserTask);
 route.post("/searchemployee",adminController.searchEmployee);
 
 route.post("/resetpassword",adminController.resetPassword);
+route.post("/taskstatus",adminController.taskStatusSave);
 
 module.exports = route;

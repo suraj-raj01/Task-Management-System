@@ -186,7 +186,7 @@ h2{
     height: 100%;
     display: flex;
     flex-wrap: wrap;
-    align-items: center;
+    align-items: start;
     justify-content: start;
     padding: 5px;
     gap: 15px;
@@ -202,6 +202,7 @@ h2{
     justify-content: start;
     border-radius: 10px;
     box-shadow: 0 0 5px #80808092;
+    background-color: #f0ecec4f;
 }
 
 #usertask span{
@@ -212,8 +213,8 @@ h2{
     align-items: center;
     justify-content: center;
     border-radius: 20px;
-    background-color: #3b3b3b;
-    color: white;
+    background-color: #fff;
+    color: #1677ff;
     font-weight: 500;
 }
 

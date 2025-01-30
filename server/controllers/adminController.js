@@ -109,7 +109,6 @@ const editSaveEmployee = async (req, res) => {
             username: username,
             useremail: useremail,
             designation: designation,
-            password: password
         })
         res.status(200).json({ msg: "employee data updated!!" });
     } catch (error) {
@@ -194,6 +193,20 @@ const resetPassword = async(req,res)=>{
     }
 }
 
+const taskStatusSave = async(req,res)=>{
+    const {taskstatus, id} = req.body;
+    try {
+        const Data = await TaskModel.findByIdAndUpdate(id,{
+            taskstatus:taskstatus,
+            empreport: "success"
+        })
+        res.status(200).json("Your Task submitted successfully!!")
+    }catch(error){
+        res.status(400).json({msg:"something went wrong!!"})
+    }
+}
+
+
 module.exports = {
     adminLogin,
     userSave,
@@ -207,5 +220,6 @@ module.exports = {
     taskStatus,
     displayUserTask,
     searchEmployee,
-    resetPassword
+    resetPassword,
+    taskStatusSave
 }
