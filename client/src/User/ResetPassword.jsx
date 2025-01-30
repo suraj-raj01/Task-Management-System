@@ -59,6 +59,7 @@ const ResetPassword = () => {
             name="useremail"
             value={input.useremail}
             onChange={handleInput}
+            placeholder='enter your email'
           />
         </Form.Item>
 
@@ -72,6 +73,7 @@ const ResetPassword = () => {
             name="oldpassword"
             value={input.oldpassword}
             onChange={handleInput}
+            placeholder='enter your old password'
           />
         </Form.Item>
 
@@ -85,6 +87,7 @@ const ResetPassword = () => {
             name="newpassword"
             value={input.newpassword}
             onChange={handleInput}
+            placeholder='enter your new password'
           />
         </Form.Item>
 
@@ -97,7 +100,7 @@ const ResetPassword = () => {
             Reset Password
           </Button>
         </Form.Item>
-      </Form>
+    </Form>
     </>
   )
 }

@@ -6,7 +6,7 @@ import axios from 'axios'
 import { message } from 'antd'
 const UserTask = () => {
   const navigate = useNavigate();
-  const[mydata,setMydata] = useState({});
+  const[mydata,setMydata] = useState([]);
 
   const loadData=async()=>{
     let api='http://localhost:8000/admin/displayusertask';
@@ -21,45 +21,34 @@ const UserTask = () => {
     loadData();
   },[])
 
-
-  return (
-    <>
-        <div id="usertask">
-        {/* <Table striped hover responsive bordered>
-            <thead>
-                <tr>
-                    <th>Task Name</th>
-                    <th>Task Description</th>
-                    <th>DeadLine</th>
-                    <th>Status</th>
-                </tr>
-            </thead>
-            <tbody>
-              <tr>
-              <td>{mydata.tasktitle}</td>
-              <td>{mydata.description}</td>
-              <td>{mydata.completiondays}</td>
-              <td></td>
-              </tr>
-            </tbody>
-        </Table> */}
-
+  let count=0;
+  const res = mydata.map((key)=>{
+    count++;
+    return(
+      <>
+      <div id="usertask">
+        <span>{count}</span> <br />
         <b>Task Title </b>
-        <p>{mydata.tasktitle}</p>
-        
+        <p>{key.tasktitle}</p>
         <b>Task Description</b>
-        <p>{mydata.description}</p>
-
+        <p>{key.description}</p>
         <b>Completion Days</b>
-        <p>{mydata.completiondays}{" Days"}</p>
-
+        <p>{key.completiondays}{" Days"}</p>
           <br />
           <div style={{display:'flex',gap:'10px'}}>
             <Button size='sm' variant='success'><i class="fas fa-circle-check"></i> Completed</Button>
             <Button size='sm' variant='warning'><i class="far fa-hourglass"></i> Partially Complete</Button>
             <Button size='sm' variant='danger'><i class="fas fa-circle-xmark"></i> Not Complete</Button>
           </div>
+      </div>
+      </>
+    )
+  })
 
+  return (
+    <>
+        <div id="usertasklyt">
+          {res}
         </div>
         <br />
     </>

@@ -54,6 +54,8 @@ const UserDashboard = () => {
             {/* <Navbar.Brand as={Link} to="createuser" style={{backgroundColor:'red',color:'white'}}>LogOut</Navbar.Brand> */}
             {/* <Navbar.Brand as={Link} to="userprofile">Your Profile</Navbar.Brand> */}
             <Navbar.Brand as={Link} to="usertask">Your Tasks</Navbar.Brand>
+            <Navbar.Brand as={Link} to="pendingtask">Pending Task</Navbar.Brand>
+            <Navbar.Brand as={Link} to="completedtask">Completed Task</Navbar.Brand>
             <Navbar.Brand as={Link} to="resetpassword">Reset Password</Navbar.Brand>
             </div>
             <div id="data">

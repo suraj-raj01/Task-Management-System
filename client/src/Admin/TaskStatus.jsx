@@ -32,9 +32,12 @@ const TaskStatus = () => {
         <tr id="taskstatus">
           <td className="text-center">{sno}</td>
           <td>{key.empid.empemail}</td>
-          <td>{key.empid.designation}</td>
+          <td></td>
+          <td style={{width:'180px'}}>{key.empid.designation}</td>
           <td className="text-center">
-          <Table responsive bordered width='20%'>
+          <details>
+            <summary>See Task Details</summary>
+            <Table responsive bordered width='20%'>
             <thead>
               <tr id="taskdetails">
                 <th>Task</th>
@@ -50,6 +53,7 @@ const TaskStatus = () => {
               </tr>
             </tbody>
           </Table>
+          </details>
           </td>
           {/* <td className="text-center">
             <i class="far fa-circle-check"></i> &nbsp;&nbsp;
@@ -82,9 +86,9 @@ const TaskStatus = () => {
             <tr id="tablehead">
               <th>S.No</th>
               <th>Employee Id</th>
+              <th>Task Status</th>
               <th style={{width:'140px'}}>Designation</th>
               <th>Task Details</th>
-              {/* <th style={{width:'140px'}}>Task Status</th> */}
             </tr>
           </thead>
           <tbody>{res}</tbody>
