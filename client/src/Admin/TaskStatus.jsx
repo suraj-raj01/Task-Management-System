@@ -32,7 +32,7 @@ const TaskStatus = () => {
         <tr id="taskstatus">
           <td className="text-center">{sno}</td>
           <td>{key.empid.empemail}</td>
-          <td></td>
+          <td className='text-center'>{key.taskstatus}</td>
           <td style={{width:'180px'}}>{key.empid.designation}</td>
           <td className="text-center">
           <details>
@@ -85,8 +85,8 @@ const TaskStatus = () => {
           <thead>
             <tr id="tablehead">
               <th>S.No</th>
-              <th>Employee Id</th>
-              <th>Task Status</th>
+              <th className='text-start'>Employee Id</th>
+              <th className='text-center'>Task Status</th>
               <th style={{width:'140px'}}>Designation</th>
               <th>Task Details</th>
             </tr>

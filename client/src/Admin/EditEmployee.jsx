@@ -100,13 +100,6 @@ const EditEmp = () => {
         </select>
         </Form.Item>
 
-        <Form.Item
-          label="Password"
-          rules={[{ required: true, message: "Please input your email!" }]}
-        >
-          <Input type='password' name='password' value={input.password} onChange={handleInput}/>
-        </Form.Item>
-
         <Form.Item label={null}>
           <Button type="primary" onClick={handleSubmit} style={{ width: "100%" }}>
             Create User

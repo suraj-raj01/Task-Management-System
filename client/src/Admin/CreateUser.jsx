@@ -12,7 +12,7 @@ const onFinishFailed = (errorInfo) => {
 const CreateUser = () => {
   const navigate = useNavigate();
   const[input,setInput] = useState({});
-  const[isVisible,setIsvisible] = useState(false);
+  const[isVisible,setIsvisible] = useState(true);
 
   const handleInput=(e)=>{
     const name = e.target.name;
@@ -30,7 +30,6 @@ const CreateUser = () => {
     } catch (error) {
       message.error(error.response.data.msg);
     }
-    setIsvisible(true);
   }
 
   useEffect(()=>{

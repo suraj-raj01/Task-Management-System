@@ -25,16 +25,16 @@ const DeleteEmployee = () => {
     loadData();
   },[])
   
-  // const deleteEmp=async(id)=>{
-  //   let api = 'http://localhost:8000/admin/deleteuser';
-  //   try {
-  //       const response = await axios.post(api,{id:id})
-  //       message.success("Employee deleted successfully !!")
-  //       loadData();
-  //   } catch (error) {
-  //       message.error(error.response.data.msg);
-  //   }
-  // }
+  const deleteEmp=async(id)=>{
+    let api = 'http://localhost:8000/admin/deleteuser';
+    try {
+        const response = await axios.post(api,{id:id})
+        message.success("Employee deleted successfully !!")
+        loadData();
+    } catch (error) {
+        message.error(error.response.data.msg);
+    }
+  }
 
   const editEmp=(id)=>{
     navigate(`/admindashboard/editemp/${id}`);
@@ -52,7 +52,7 @@ const DeleteEmployee = () => {
         <td>{key.designation}</td>
         <td style={{display:'flex',gap:'10px',justifyContent:'center'}}>
           <Button variant='primary' size='sm' onClick={()=>{editEmp(key._id)}}><i class="fas fa-square-pen"></i>&nbsp; Edit</Button>
-          {/* <Button variant='danger' size='sm' onClick={()=>{deleteEmp(key._id)}}><i class="fas fa-trash"></i>&nbsp; Delete</Button> */}
+          <Button variant='danger' size='sm' onClick={()=>{deleteEmp(key._id)}}><i class="fas fa-trash"></i>&nbsp; Delete</Button>
         </td>
       </tr>
       </>
