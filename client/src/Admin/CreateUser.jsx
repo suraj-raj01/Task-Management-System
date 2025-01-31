@@ -35,7 +35,7 @@ const CreateUser = () => {
   useEffect(()=>{
     setTimeout(()=>{
       setIsvisible(false);
-    },1200)
+    },800)
     setIsvisible(true);
   },[])
 
@@ -44,7 +44,7 @@ const CreateUser = () => {
         {/* <h1>CreateUser</h1> */}
         {isVisible?(
           <center style={{color:'#1677ff',marginTop:'150px'}}>
-           <Spin size='large'/>
+           <img src="https://upload.wikimedia.org/wikipedia/commons/c/c7/Loading_2.gif" alt="" height='60px'/>
           </center>
         ):(
           <Form
@@ -70,7 +70,7 @@ const CreateUser = () => {
           name="username"
           rules={[{ required: true, message: "Please input your username!" }]}
         >
-          <Input name='username' value={input.username} onChange={handleInput}/>
+          <Input placeholder='enter user name' name='username' value={input.username} onChange={handleInput}/>
         </Form.Item>
 
         <Form.Item
@@ -79,7 +79,7 @@ const CreateUser = () => {
           type="email"
           rules={[{ required: true, message: "Please input your email!" }]}
         >
-          <Input name='useremail' value={input.useremail} onChange={handleInput}/>
+          <Input placeholder='enter user email' name='useremail' value={input.useremail} onChange={handleInput}/>
         </Form.Item>
 
         <Form.Item

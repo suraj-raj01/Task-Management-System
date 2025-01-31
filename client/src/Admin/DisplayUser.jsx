@@ -9,6 +9,7 @@ const DisplayUser = () => {
 
   const navigate = useNavigate();
   const[mydata,setMydata] = useState([]);
+  const[isVisible,setIsvisible] = useState(true);
 
   const loadData=async()=>{
     let api='http://localhost:8000/admin/displayuser';
@@ -22,6 +23,10 @@ const DisplayUser = () => {
 
   useEffect(()=>{
     loadData();
+    setTimeout(()=>{
+      setIsvisible(false);
+    },800);
+    setIsvisible(true);
   },[])
 
   const taskAssign=(id)=>{
@@ -62,7 +67,12 @@ const DisplayUser = () => {
       </div>
 
     <div id="display">
-    <Table bordered hover responsive striped>
+    {isVisible?(
+      <center style={{color:'#1677ff',marginTop:'50px'}}>
+      <img src="https://upload.wikimedia.org/wikipedia/commons/c/c7/Loading_2.gif" alt="" height='60px'/>
+     </center>
+    ):(
+      <Table bordered hover responsive striped>
       <thead>
         <tr>
           <th>S.No</th>
@@ -76,6 +86,7 @@ const DisplayUser = () => {
       {res}
       </tbody>
     </Table>
+    )}
     </div>
     </>
   )

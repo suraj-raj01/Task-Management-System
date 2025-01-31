@@ -18,7 +18,7 @@ const UserDashboard = () => {
       setUsername(localStorage.getItem("employee"));
       setUserid(localStorage.getItem("employeeid"));
       setPassword(localStorage.getItem("empPass"));
-      setDesignation(localStorage.getItem("designation"))
+      setDesignation(localStorage.getItem("designation"));
     }
   }
 

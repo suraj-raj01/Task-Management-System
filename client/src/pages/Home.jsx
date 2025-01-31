@@ -21,7 +21,7 @@ const Home = () => {
 
   const handleSubmit = async () => {
     let api = "http://localhost:8000/admin/adminlogin";
-    let user_api = "http://localhost:8000/admin/userlogin";
+    let user_api = "http://localhost:8000/employee/userlogin";
     if (userType == "admin") {
       try {
         const response = await axios.post(api, {

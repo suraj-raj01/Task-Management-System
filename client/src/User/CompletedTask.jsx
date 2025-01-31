@@ -9,11 +9,12 @@ const CompletedTask = () => {
   const navigate = useNavigate();
   const [mydata, setMydata] = useState([]);
   const [taskstatus, setTaskstatus] = useState("");
+  const [isVisible,setIsVisible] = useState(true);
 
   const empid = localStorage.getItem("empid");
 
   const loadData = async () => {
-    let api = "http://localhost:8000/admin/displayusertask";
+    let api = "http://localhost:8000/employee/displayusertask";
     try {
       const response = await axios.post(api, { Id: empid });
       setMydata(response.data);
@@ -24,14 +25,14 @@ const CompletedTask = () => {
 
   useEffect(() => {
     loadData();
-  }, []);
-
-  useEffect(() => {
-    loadData();
+    setTimeout(()=>{
+      setIsVisible(false);
+    },1000);
+    setIsVisible(true);
   }, []);
 
   const handleSubmit = async (id) => {
-    let api = "http://localhost:8000/admin/taskstatus";
+    let api = "http://localhost:8000/employee/taskstatus";
     try {
       const response = await axios.post(api, {
         taskstatus: taskstatus,
@@ -103,7 +104,15 @@ const CompletedTask = () => {
 
   return (
     <div>
-      <div id="usertasklyt" style={{overflowY:'scroll', height:'60vh'}} >{res}</div>
+      <div id="usertasklyt" style={{overflowY:'scroll', height:'60vh'}} >
+        {isVisible?(
+          <center style={{color:'#1677ff',marginTop:'150px'}}>
+          <img src="https://upload.wikimedia.org/wikipedia/commons/c/c7/Loading_2.gif" alt="" height='60px'/>
+         </center>
+        ):(
+          res
+        )}
+      </div>
     </div>
   );
 };
