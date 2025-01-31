@@ -268,6 +268,7 @@ h2{
 #taskstatus td{
     text-align: start;
     align-content: center;
+    font-size: 14px;
 }
 
 #taskdetails th{
