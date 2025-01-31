@@ -9,11 +9,12 @@ const UserTask = () => {
   const navigate = useNavigate();
   const[mydata,setMydata] = useState([]);
   const[taskstatus,setTaskstatus] = useState("");
+  const[isVisible,setIsvisible] = useState(true);
 
   const empid = localStorage.getItem("empid");
 
   const loadData=async()=>{
-    let api='http://localhost:8000/admin/displayusertask';
+    let api='http://localhost:8000/employee/displayusertask';
     try {
       const response = await axios.post(api,{Id:empid});
       setMydata(response.data);
@@ -26,8 +27,14 @@ const UserTask = () => {
     loadData();
   },[])
 
+  useEffect(()=>{
+    setTimeout(()=>{
+      setIsvisible(false);
+    },800)
+  },[])
+
   const handleSubmit = async(id) =>{
-    let api='http://localhost:8000/admin/taskstatus';
+    let api='http://localhost:8000/employee/taskstatus';
     try {
       const response = await axios.post(api,{taskstatus:taskstatus,id:id});
       message.success(response.data);
@@ -45,7 +52,7 @@ const UserTask = () => {
       <div id="usertask">
       <div style={{width:'100%',display:'flex',justifyContent:'space-between'}}>
           <span>{count}</span>
-          <Button variant="outline-primary" size="sm">{<i class="far fa-circle-check"></i>}{" "}{key.taskstatus}</Button>
+          <Button variant="outline-primary" disabled size="sm">{<i class="far fa-circle-check"></i>}{" "}{key.taskstatus}</Button>
           </div>
         <h1></h1>
         <b>Task Title </b>
@@ -75,7 +82,13 @@ const UserTask = () => {
   return (
     <>
         <div id="usertasklyt">
-          {res}
+         {isVisible?(
+          <center style={{position:'absolute',top:'45%',left:'60%'}}>
+          <img src="https://upload.wikimedia.org/wikipedia/commons/c/c7/Loading_2.gif" alt="" height='60px'/>
+         </center>
+         ):(
+           res
+         )}
         </div>
         <br />
     </>

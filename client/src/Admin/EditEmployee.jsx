@@ -13,6 +13,7 @@ const EditEmp = () => {
   const navigate = useNavigate();
   const[input,setInput] = useState({});
   const{id} = useParams();
+  const[isVisible,setIsvisible] = useState(true);
 
   const loadData = async()=>{
     let api='http://localhost:8000/admin/editdisplay';
@@ -28,6 +29,13 @@ const EditEmp = () => {
 
   useEffect(()=>{
     loadData();
+  },[])
+
+  useEffect(()=>{
+    setTimeout(()=>{
+      setIsvisible(false);
+    },1000)
+    setIsvisible(true);
   },[])
 
   const handleInput=(e)=>{
@@ -52,60 +60,66 @@ const EditEmp = () => {
     <>
         {/* <h1>EditEmp</h1> */}
 
-        <Form
-        id="form"
-        name="basic"
-        labelCol={{ span: 6 }}
-        wrapperCol={{ span: 17 }}
-        style={{
-          maxWidth: 600,
-          backgroundColor:'white',
-          marginTop:'10px'
-        }}
-        initialValues={{
-          remember: true,
-        }}
-        onFinish={onFinish}
-        onFinishFailed={onFinishFailed}
-        autoComplete="off"
-      >
-        <h5 className='p-3'>Update Employee</h5>
-        <Form.Item
-          label="Username"
-          rules={[{ required: true, message: "Please input your username!" }]}
-        >
-          <Input name='empname' value={input.empname} onChange={handleInput}/>
-        </Form.Item>
-
-        <Form.Item
-          label="Useremail"
-          rules={[{ required: true, message: "Please input your email!" }]}
-        >
-          <Input type="email" name='empemail' value={input.empemail} onChange={handleInput}/>
-        </Form.Item>
-
-        <Form.Item
-          label={null}
-          rules={[{ required: true, message: "Please input your Designation!" }]}
-        >
-        <select name='designation' style={{width:'100%',padding:'5px',borderRadius:'5px',border:'1px solid #ccc',outline:'none'}} value={input.designation} onChange={handleInput}>
-          <option value="">Select Designation</option>
-          <option value="Programmer">Programmer</option>
-          <option value="Project Manager">Project Manager</option>
-          <option value="Team Leader">Team Leader</option>
-          <option value="UI/UX Designer">UI/UX Designer</option>
-          <option value="Data Analyst">Data Analyst</option>
-          <option value="Database Engineer">Database Engineer</option>
-          <option value="Backend Developer">Backend Developer</option>
-        </select>
-        </Form.Item>
-
-        <Form.Item label={null}>
-          <Button type="primary" onClick={handleSubmit} style={{ width: "100%" }}>
-            Create User
-          </Button>
-        </Form.Item>
-      </Form>
+       {isVisible?(
+        <center style={{color:'#1677ff',marginTop:'150px'}}>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/c/c7/Loading_2.gif" alt="" height='60px'/>
+       </center>
+       ):(
+         <Form
+         id="form"
+         name="basic"
+         labelCol={{ span: 6 }}
+         wrapperCol={{ span: 17 }}
+         style={{
+           maxWidth: 600,
+           backgroundColor:'white',
+           marginTop:'10px'
+         }}
+         initialValues={{
+           remember: true,
+         }}
+         onFinish={onFinish}
+         onFinishFailed={onFinishFailed}
+         autoComplete="off"
+       >
+         <h5 className='p-3'>Update Employee</h5>
+         <Form.Item
+           label="Username"
+           rules={[{ required: true, message: "Please input your username!" }]}
+         >
+           <Input name='empname' value={input.empname} onChange={handleInput}/>
+         </Form.Item>
+ 
+         <Form.Item
+           label="Useremail"
+           rules={[{ required: true, message: "Please input your email!" }]}
+         >
+           <Input type="email" name='empemail' value={input.empemail} onChange={handleInput}/>
+         </Form.Item>
+ 
+         <Form.Item
+           label={null}
+           rules={[{ required: true, message: "Please input your Designation!" }]}
+         >
+         <select name='designation' style={{width:'100%',padding:'5px',borderRadius:'5px',border:'1px solid #ccc',outline:'none'}} value={input.designation} onChange={handleInput}>
+           <option value="">Select Designation</option>
+           <option value="Programmer">Programmer</option>
+           <option value="Project Manager">Project Manager</option>
+           <option value="Team Leader">Team Leader</option>
+           <option value="UI/UX Designer">UI/UX Designer</option>
+           <option value="Data Analyst">Data Analyst</option>
+           <option value="Database Engineer">Database Engineer</option>
+           <option value="Backend Developer">Backend Developer</option>
+         </select>
+         </Form.Item>
+ 
+         <Form.Item label={null}>
+           <Button type="primary" onClick={handleSubmit} style={{ width: "100%" }}>
+             Create User
+           </Button>
+         </Form.Item>
+       </Form>
+       )}
     </>
   )
 }

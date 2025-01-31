@@ -10,11 +10,12 @@ const PendingTask = () => {
   const navigate = useNavigate();
   const [mydata, setMydata] = useState([]);
   const [taskstatus, setTaskstatus] = useState("");
+  const [isVisible, setIsvisible] = useState("");
 
   const empid = localStorage.getItem("empid");
 
   const loadData = async () => {
-    let api = "http://localhost:8000/admin/displayusertask";
+    let api = "http://localhost:8000/employee/displayusertask";
     try {
       const response = await axios.post(api, { Id: empid });
       setMydata(response.data);
@@ -25,14 +26,14 @@ const PendingTask = () => {
 
   useEffect(() => {
     loadData();
-  }, []);
-
-  useEffect(() => {
-    loadData();
+    setTimeout(()=>{
+      setIsvisible(false);
+    },1000);
+    setIsvisible(true);
   }, []);
 
   const handleSubmit = async (id) => {
-    let api = "http://localhost:8000/admin/taskstatus";
+    let api = "http://localhost:8000/employee/taskstatus";
     try {
       const response = await axios.post(api, {
         taskstatus: taskstatus,
@@ -105,7 +106,15 @@ const PendingTask = () => {
 
   return (
     <div>
-        <div id="usertasklyt">{res}</div>
+        <div id="usertasklyt">
+          {isVisible?(
+            <center style={{color:'#1677ff',marginTop:'150px'}}>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/c/c7/Loading_2.gif" alt="" height='60px'/>
+           </center>
+          ):(
+            res
+          )}
+        </div>
     </div>
   )
 }

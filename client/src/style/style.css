@@ -207,12 +207,13 @@ h2{
 
 #usertask span{
     border: 1px solid;
+    padding: 2px;
     width: 30px;
     height: 30px;
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 20px;
+    border-radius: 25px;
     background-color: #fff;
     color: #1677ff;
     font-weight: 500;
@@ -320,6 +321,7 @@ h2{
     }
     #usertask {
         width: 100%; /* Adjusts width for smaller screens */
+        padding: 10px;
         height: auto; /* Allows height to adjust dynamically */
     }
 }
@@ -345,6 +347,8 @@ h2{
     }
     #usertask {
         width: 90%; /* Adjusts width for tablets */
+        height: auto;
+        padding: 10px;
     }
 }
 

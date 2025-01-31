@@ -9,9 +9,9 @@ import Form from "react-bootstrap/Form";
 const TaskStatus = () => {
 
   const[mydata, setMydata] = useState([]);
-
+  const[isVisible,setIsvisible] = useState(true);
   const loadData = async () => {
-    let api = "http://localhost:8000/admin/taskstatus";
+    let api = "http://localhost:8000/admin/emptaskstatus";
     try {
       const response = await axios.get(api);
       setMydata(response.data);
@@ -22,6 +22,10 @@ const TaskStatus = () => {
   };
   useEffect(() => {
     loadData();
+    setTimeout(()=>{
+      setIsvisible(false);
+    },800);
+    setIsvisible(true);
   }, []);
 
   let sno = 0;
@@ -81,7 +85,12 @@ const TaskStatus = () => {
         </Form>
       </div>
       <div id="display" style={{overflowY:'scroll'}}>
-        <Table bordered responsive>
+        {isVisible?(
+          <center style={{color:'#1677ff',marginTop:'50px'}}>
+          <img src="https://upload.wikimedia.org/wikipedia/commons/c/c7/Loading_2.gif" alt="" height='60px'/>
+         </center>
+        ):(
+          <Table bordered responsive>
           <thead>
             <tr id="tablehead">
               <th>S.No</th>
@@ -93,6 +102,7 @@ const TaskStatus = () => {
           </thead>
           <tbody>{res}</tbody>
         </Table>
+        )}
       </div>
     </>
   );

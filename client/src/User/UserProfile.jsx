@@ -10,6 +10,7 @@ const UserProfile = () => {
     const navigate = useNavigate();
     const[username,setUsername] =  useState("");
     const[userid,setUserid] = useState("");
+    const[empid,setEmpId] = useState("");
     const[password,setPassword] = useState("");
     const[designation,setDesignation] = useState("");
   
@@ -19,6 +20,7 @@ const UserProfile = () => {
       }else{
         setUsername(localStorage.getItem("employee"));
         setUserid(localStorage.getItem("employeeid"));
+        setEmpId(localStorage.getItem("empid"));
         setPassword(localStorage.getItem("empPass"));
         setDesignation(localStorage.getItem("designation"));
       }
@@ -39,10 +41,12 @@ const UserProfile = () => {
       let formData = new FormData();
       if(myfile==""){
         message.error("please select profile photo")
+        return false;
       }else{
       formData.append("photo",myfile);
       formData.append("id",id);
-      let api = 'http://localhost:8000/admin/uploadphoto';
+      formData.append("empid",empid);
+      let api = 'http://localhost:8000/employee/uploadphoto';
       try {
         const response = await axios.post(api,formData);
         message.success("profile photo saved!!");
