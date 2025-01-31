@@ -12,5 +12,6 @@ route.post("/editsave",adminController.editSaveEmployee);
 route.post("/assigntask",adminController.assginTask);
 route.get("/emptaskstatus",adminController.taskStatus);
 route.post("/searchemployee",adminController.searchEmployee);
+route.post("/reassigntask",adminController.reAssignTask);
 
 module.exports = route;

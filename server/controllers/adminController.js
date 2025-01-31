@@ -29,7 +29,6 @@ const adminLogin = async (req, res) => {
 const userSave = async (req, res) => {
     const { username, useremail, designation } = req.body;
     const myPassword = RandomPass();
-    console.log(myPassword)
 
     const mailOptions = {
         from: "surajkumarbgu26@gmail.com", // Sender email
@@ -131,6 +130,17 @@ const searchEmployee = async(req,res) =>{
     }
 }
 
+const reAssignTask = async(req,res)=>{
+    const{id}=req.body;
+    try {
+        const Data = await TaskModel.findByIdAndUpdate(id,{
+            empreport:"pending"
+        })
+        res.status(200).json("Task Re-Assign Successfully!!")
+    } catch (error) {
+        res.status(400).json({msg:"Something went wrong!!"})
+    }
+}
 
 module.exports = {
     adminLogin,
@@ -141,5 +151,6 @@ module.exports = {
     editSaveEmployee,
     assginTask,
     taskStatus,
-    searchEmployee
+    searchEmployee,
+    reAssignTask
 }

@@ -15,7 +15,6 @@ const TaskStatus = () => {
     try {
       const response = await axios.get(api);
       setMydata(response.data);
-      console.log(response.data);
     } catch (error) {
       message.error(error.response.data.msg);
     }
@@ -28,16 +27,44 @@ const TaskStatus = () => {
     setIsvisible(true);
   }, []);
 
+  const ReassignTask=async(id)=>{
+    let api='http://localhost:8000/admin/reassigntask'
+    try {
+      const response = await axios.post(api,{id:id});
+      message.success(response.data);
+      loadData();
+    } catch (error) {
+      message.error(error.response.data.msg);
+    }
+  }
+
   let sno = 0;
   const res = mydata.map((key) => {
     sno++;
     return (
       <>
         <tr id="taskstatus">
+          <td className="text-center">
+          {key.empreport==="success"?(
+            <i class="fas fa-circle-check" style={{color:'green',fontSize:'20px'}}></i>
+          ):(
+            <i class="fas fa-circle-xmark" style={{color:'red',fontSize:'20px'}}></i>
+          )}
+          </td>
           <td className="text-center">{sno}</td>
           <td>{key.empid.empemail}</td>
-          <td className='text-center'>{key.taskstatus}</td>
           <td style={{width:'180px'}}>{key.empid.designation}</td>
+          <td className='text-center'>{key.taskstatus}</td>
+          <td className='text-center'>
+          <div style={{display:'flex',alignContent:'center',justifyContent:'space-between', gap:'10px'}}>
+          {key.empreport=="success"?(
+            <Button disabled variant="success" size="sm">success</Button>
+          ):(
+            <Button disabled variant="danger" size="sm">pending</Button>
+          )}
+          <Button size="sm" onClick={()=>{ReassignTask(key._id)}}>Re-Assign</Button>
+          </div>
+          </td>
           <td className="text-center">
           <details>
             <summary>See Task Details</summary>
@@ -93,10 +120,12 @@ const TaskStatus = () => {
           <Table bordered responsive>
           <thead>
             <tr id="tablehead">
+              <th>Status</th>
               <th>S.No</th>
               <th className='text-start'>Employee Id</th>
-              <th className='text-center'>Task Status</th>
               <th style={{width:'140px'}}>Designation</th>
+              <th className='text-center'>Task Status</th>
+              <th className='text-center'>Task Report</th>
               <th>Task Details</th>
             </tr>
           </thead>
