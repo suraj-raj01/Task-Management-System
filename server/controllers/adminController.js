@@ -134,7 +134,8 @@ const reAssignTask = async(req,res)=>{
     const{id}=req.body;
     try {
         const Data = await TaskModel.findByIdAndUpdate(id,{
-            empreport:"pending"
+            empreport:"pending",
+            taskstatus:"Not Complete"
         })
         res.status(200).json("Task Re-Assign Successfully!!")
     } catch (error) {

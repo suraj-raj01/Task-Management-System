@@ -28,10 +28,10 @@ const AdminProfile = () => {
       <div id="profile">
         <h1>Welcome to Admin Dashboard</h1>
         <hr />
-        <div id="profileimg">
+        <div id="adminprofileimg">
           <div id="photo">
             <img
-              src="https://t3.ftcdn.net/jpg/01/21/24/20/360_F_121242015_hRYuVPJmzhWQdvrkh3dk5MqjNxY3JzTr.jpg"
+              src="https://cdn2.iconfinder.com/data/icons/rcons-user/32/male-circle-512.png"
               alt=""
               height="100%"
               width="100%"

@@ -7,9 +7,9 @@ import { useNavigate } from "react-router-dom";
 import Form from "react-bootstrap/Form";
 
 const TaskStatus = () => {
+  const [mydata, setMydata] = useState([]);
+  const [isVisible, setIsvisible] = useState(true);
 
-  const[mydata, setMydata] = useState([]);
-  const[isVisible,setIsvisible] = useState(true);
   const loadData = async () => {
     let api = "http://localhost:8000/admin/emptaskstatus";
     try {
@@ -21,22 +21,22 @@ const TaskStatus = () => {
   };
   useEffect(() => {
     loadData();
-    setTimeout(()=>{
+    setTimeout(() => {
       setIsvisible(false);
-    },800);
+    }, 800);
     setIsvisible(true);
   }, []);
 
-  const ReassignTask=async(id)=>{
-    let api='http://localhost:8000/admin/reassigntask'
+  const ReassignTask = async (id) => {
+    let api = "http://localhost:8000/admin/reassigntask";
     try {
-      const response = await axios.post(api,{id:id});
+      const response = await axios.post(api, { id: id });
       message.success(response.data);
       loadData();
     } catch (error) {
       message.error(error.response.data.msg);
     }
-  }
+  };
 
   let sno = 0;
   const res = mydata.map((key) => {
@@ -44,31 +44,35 @@ const TaskStatus = () => {
     return (
       <>
         <tr id="taskstatus">
-          <td className="text-center">
-          {key.empreport==="success"?(
-            <i class="fas fa-circle-check" style={{color:'green',fontSize:'20px'}}></i>
-          ):(
-            <i class="fas fa-circle-xmark" style={{color:'red',fontSize:'20px'}}></i>
-          )}
-          </td>
           <td className="text-center">{sno}</td>
           <td>{key.empid.empemail}</td>
-          <td style={{width:'180px'}}>{key.empid.designation}</td>
-          <td className='text-center'>{key.taskstatus}</td>
-          <td className='text-center'>
-          <div style={{display:'flex',alignContent:'center',justifyContent:'space-between', gap:'10px'}}>
-          {key.empreport=="success"?(
-            <Button disabled variant="success" size="sm">success</Button>
-          ):(
-            <Button disabled variant="danger" size="sm">pending</Button>
-          )}
-          <Button size="sm" onClick={()=>{ReassignTask(key._id)}}>Re-Assign</Button>
-          </div>
-          </td>
+          <td>{key.empid.designation}</td>
+          <td className="text-center">{key.taskstatus}</td>
           <td className="text-center">
-          <details>
+            {key.empreport === "success" ? (
+              <i
+                class="fas fa-circle-check"
+                style={{ color: "green", fontSize: "20px" }}
+              ></i>
+            ) : (
+              <i
+                class="fas fa-circle-xmark"
+                style={{ color: "red", fontSize: "20px" }}
+              ></i>
+            )}
+          </td>
+          <td className="text-center" >  
+              <Button size="sm" onClick={() => {
+                  ReassignTask(key._id);
+                }}
+              >
+              Re-Assign
+              </Button>
+          </td>
+          <td className="text-center" >
+            <details>
             <summary>See Task Details</summary>
-            <Table responsive bordered width='20%'>
+            <Table responsive bordered width='100%'>
             <thead>
               <tr id="taskdetails">
                 <th>Task</th>
@@ -95,6 +99,10 @@ const TaskStatus = () => {
     );
   });
 
+  const res1 = mydata.map((key) => {
+    return <></>;
+  });
+
   return (
     <>
       {/* <h1 className='p-2'>TaskStatus</h1> */}
@@ -111,26 +119,30 @@ const TaskStatus = () => {
           </Button>
         </Form>
       </div>
-      <div id="display" style={{overflowY:'scroll'}}>
-        {isVisible?(
-          <center style={{color:'#1677ff',marginTop:'50px'}}>
-          <img src="https://upload.wikimedia.org/wikipedia/commons/c/c7/Loading_2.gif" alt="" height='60px'/>
-         </center>
-        ):(
+      <div id="display" style={{ overflowY: "scroll" }}>
+        {isVisible ? (
+          <center style={{ color: "#1677ff", marginTop: "50px" }}>
+            <img
+              src="https://upload.wikimedia.org/wikipedia/commons/c/c7/Loading_2.gif"
+              alt=""
+              height="60px"
+            />
+          </center>
+        ) : (
           <Table bordered responsive>
-          <thead>
-            <tr id="tablehead">
-              <th>Status</th>
-              <th>S.No</th>
-              <th className='text-start'>Employee Id</th>
-              <th style={{width:'140px'}}>Designation</th>
-              <th className='text-center'>Task Status</th>
-              <th className='text-center'>Task Report</th>
-              <th>Task Details</th>
-            </tr>
-          </thead>
-          <tbody>{res}</tbody>
-        </Table>
+            <thead>
+              <tr id="tablehead">
+                <th>S.No</th>
+                <th className="text-start">Employee Id</th>
+                <th className="text-start">Designation</th>
+                <th className="text-center">Task Status</th>
+                <th>Status</th>
+                <th className="text-center">Re-Assign</th>
+                <th>Task Details</th>
+              </tr>
+            </thead>
+            <tbody>{res}</tbody>
+          </Table>
         )}
       </div>
     </>
