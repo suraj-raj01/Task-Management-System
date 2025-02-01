@@ -159,13 +159,26 @@ h2{
     height: 50vh;
     text-align: start;
 }
-
-#profileimg{
-    padding: 10px 0px;
+#adminprofileimg{
+    padding: 15px 10px;
     display: flex;
     align-items: center;
     justify-content: start;
     gap: 20px;
+    border-radius: 5px;
+    background-image: url('https://i.pinimg.com/originals/2d/e8/82/2de882cd4f3992ada3d609e3a183f7a4.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+#profileimg{
+    padding: 15px 10px;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    gap: 20px;
+    border-radius: 5px;
+    background-color: whitesmoke;
 }
 #photo{
     height: 100px;
@@ -176,6 +189,7 @@ h2{
     background-repeat: no-repeat;
     background-position: center;
     overflow: hidden;
+    background-color: white;
 }
 #photo img{
     object-fit: cover;
