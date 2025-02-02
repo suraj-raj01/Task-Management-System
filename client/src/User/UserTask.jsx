@@ -64,8 +64,8 @@ const UserTask = () => {
 
           <div style={{display:'flex',gap:'10px',width:'70%'}}>
             <Form.Select size="sm" name='taskstatus' value={taskstatus} onChange={(e)=>setTaskstatus(e.target.value)}>
-              <option selected value=''>Select Task Status</option>
-              <option value='Fully Completed'>Fully Complete</option>
+              <option  value=''>Select Task Status</option>
+              <option selected value='Fully Completed'>Fully Complete</option>
               <option value='Partially Completed'>Partial Complete</option>
               <option value='Not Completed'>Not Complete</option>
             </Form.Select>
