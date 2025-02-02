@@ -43,58 +43,76 @@ const TaskStatus = () => {
     sno++;
     return (
       <>
-        <tr id="taskstatus">
-          <td className="text-center">{sno}</td>
-          <td>{key.empid.empemail}</td>
-          <td>{key.empid.designation}</td>
-          <td className="text-center">{key.taskstatus}</td>
-          <td className="text-center">
-            {key.empreport === "success" ? (
+        <div id="task-status">
+          <div
+            style={{
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "start",
+              gap: "10px",
+              padding: "15px 10px",
+              backgroundColor: "white",
+            }}
+          >
+            <span id="counter">{sno}</span>
+            <span>{key.empreport === "success" ? (
               <i
                 class="fas fa-circle-check"
-                style={{ color: "green", fontSize: "20px" }}
+                style={{ color: "green", fontSize: "27px" }}
               ></i>
             ) : (
               <i
                 class="fas fa-circle-xmark"
-                style={{ color: "red", fontSize: "20px" }}
+                style={{ color: "red", fontSize: "27px" }}
               ></i>
-            )}
-          </td>
-          <td className="text-center" >  
-              <Button size="sm" onClick={() => {
-                  ReassignTask(key._id);
-                }}
-              >
-              Re-Assign
-              </Button>
-          </td>
-          <td className="text-center" >
-            <details>
-            <summary>See Task Details</summary>
-            <Table responsive bordered width='100%'>
-            <thead>
-              <tr id="taskdetails">
-                <th>Task</th>
-                <th>Description</th>
-                <th>Deadline</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>{key.tasktitle}</td>
-                <td>{key.description}</td>
-                <td style={{textAlign:'center'}}>{key.completiondays}</td>
-              </tr>
-            </tbody>
-          </Table>
-          </details>
-          </td>
-          {/* <td className="text-center">
-            <i class="far fa-circle-check"></i> &nbsp;&nbsp;
-            <i class="far fa-circle-xmark"></i>
-          </td> */}
-        </tr>
+            )}</span>
+            <b>Task Status : </b>
+            <Button size="sm" variant="outline-primary" disabled>
+              {key.taskstatus}
+            </Button>
+
+            <Button
+              size="sm"
+              onClick={() => {
+                ReassignTask(key._id);
+              }}
+            >
+              Re-assign Task
+            </Button>
+          </div>
+
+          <div
+            style={{
+              display: "flex",
+              alignItems: "start",
+              justifyContent: "center",
+              flexDirection: "column",
+              padding: "10px",
+              backgroundColor:'',
+            }}
+          >
+            <b>Name : {key.empid.empname.toUpperCase()}</b>
+            <b>Email : <span>{key.empid.empemail}</span></b>
+            <b>Designation : <span>{key.empid.designation}</span></b>
+          </div>
+
+         <div 
+         style={{
+          display: "flex",
+          alignItems: "start",
+          justifyContent: "center",
+          flexDirection: "column",
+          padding: "0px",
+          backgroundColor:''
+        }}
+        >
+         <div style={{height:'100px',width:"100%", display:'flex', flexDirection:'column', alignItems:'start',justifyContent:'start',backgroundColor:'whitesmoke',padding:'10px'}}>
+         <b>Task Title : <span>{key.tasktitle}</span></b>
+          <b>Task Description : <br /> <span>{key.description}</span></b>
+          </div>
+          <b className="p-2">Deadline : {key.completiondays}</b>
+         </div>
+        </div>
       </>
     );
   });
@@ -106,7 +124,7 @@ const TaskStatus = () => {
   return (
     <>
       {/* <h1 className='p-2'>TaskStatus</h1> */}
-      <div id="search">
+      {/* <div id="search">
         <Form className="d-flex">
           <Form.Control
             type="search"
@@ -118,7 +136,7 @@ const TaskStatus = () => {
             <i class="fas fa-magnifying-glass"></i> Search
           </Button>
         </Form>
-      </div>
+      </div> */}
       <div id="display" style={{ overflowY: "scroll" }}>
         {isVisible ? (
           <center style={{ color: "#1677ff", marginTop: "50px" }}>
@@ -129,20 +147,7 @@ const TaskStatus = () => {
             />
           </center>
         ) : (
-          <Table bordered responsive>
-            <thead>
-              <tr id="tablehead">
-                <th>S.No</th>
-                <th className="text-start">Employee Id</th>
-                <th className="text-start">Designation</th>
-                <th className="text-center">Task Status</th>
-                <th>Status</th>
-                <th className="text-center">Re-Assign</th>
-                <th>Task Details</th>
-              </tr>
-            </thead>
-            <tbody>{res}</tbody>
-          </Table>
+          res
         )}
       </div>
     </>
