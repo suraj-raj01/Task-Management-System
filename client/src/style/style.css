@@ -217,6 +217,7 @@ h2{
     border-radius: 10px;
     box-shadow: 0 0 5px #80808092;
     background-color: #f0ecec4f;
+    margin-bottom: 10px;
 }
 
 #usertask span{
@@ -303,7 +304,7 @@ h2{
     margin-bottom: 20px;
     text-align: start;
     border-radius: 10px;
-    box-shadow: 0 0 2px #8080806c;
+    box-shadow: 0 0 3px #8080806c;
     padding: 10px;
     margin-left: 10px;
 }
@@ -315,8 +316,8 @@ h2{
     font-weight: 500;
 }
 #counter{
-    height: 30px;
-    width: 30px;
+    height: 28px;
+    width: 28px;
     border: 1px solid;
     display: flex;
     align-items: center;
@@ -325,6 +326,10 @@ h2{
     border-radius: 50px;
     background-color: whitesmoke;
     color: #004eba;
+}
+strong{
+    color: rgb(24, 147, 188);
+    font-weight: 500;
 }
 
 /* for responsive */

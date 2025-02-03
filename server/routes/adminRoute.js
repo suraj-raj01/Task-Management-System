@@ -13,5 +13,6 @@ route.post("/assigntask",adminController.assginTask);
 route.get("/emptaskstatus",adminController.taskStatus);
 route.post("/searchemployee",adminController.searchEmployee);
 route.post("/reassigntask",adminController.reAssignTask);
+route.post("/deletetask",adminController.deleteTask);
 
 module.exports = route;

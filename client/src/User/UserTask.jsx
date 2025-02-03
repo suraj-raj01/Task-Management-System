@@ -60,7 +60,7 @@ const UserTask = () => {
         <b>Task Description</b>
         <p>{key.description}</p>
         <b>Completion Days</b>
-        <p>{key.completiondays}{" Days"}</p>
+        <p>{key.completiondays}{" Days remaining"}</p>
 
           <div style={{display:'flex',gap:'10px',width:'70%'}}>
             <Form.Select size="sm" name='taskstatus' value={taskstatus} onChange={(e)=>setTaskstatus(e.target.value)}>

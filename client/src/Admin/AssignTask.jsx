@@ -28,7 +28,7 @@ const AssignTask = () => {
     try {
       const response = await axios.post(api,{id:id,...input});
       message.success(response.data);
-      navigate("/admindashboard/emptaskstatus")
+      navigate("/admindashboard/taskstatus")
     } catch (error) {
       message.error(error.response.data.msg);
     }
