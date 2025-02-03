@@ -65,7 +65,7 @@ const PendingTask = () => {
           <b>Completion Days</b>
           <p>
             {key.completiondays}
-            {" Days"}
+            {" Days remainig"}
           </p>
 
           <div style={{ display: "flex", gap: "10px", width: "70%" }}>

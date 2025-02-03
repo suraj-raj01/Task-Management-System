@@ -65,8 +65,10 @@ const displayUser = async (req, res) => {
 const deleteUser = async (req, res) => {
     const { id } = req.body;
     try {
-        const Data = await EmployeeModel.findByIdAndDelete(id);
-        res.status(200).json(Data);
+        const TaskData = await TaskModel.findOne({empid:id});
+        await TaskModel.findByIdAndDelete(TaskData._id);
+        await EmployeeModel.findByIdAndDelete(id);
+        res.status(200).json("User Deleted !!!");
     } catch (error) {
         res.status(400).json({ msg: "something went wrong!!" });
     }
@@ -143,6 +145,16 @@ const reAssignTask = async(req,res)=>{
     }
 }
 
+const deleteTask = async(req,res)=>{
+    const{taskid} = req.body;
+    try {
+        const Data = await TaskModel.findByIdAndDelete(taskid);
+        res.status(200).json("Task Deleted Successfylly")
+    } catch (error) {
+        res.status(400).json({msg:"Something went wrong!!"});
+    }
+}
+
 module.exports = {
     adminLogin,
     userSave,
@@ -153,5 +165,6 @@ module.exports = {
     assginTask,
     taskStatus,
     searchEmployee,
-    reAssignTask
+    reAssignTask,
+    deleteTask
 }

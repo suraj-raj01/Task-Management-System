@@ -63,7 +63,7 @@ const CompletedTask = () => {
             <b>Completion Days</b>
             <p>
               {key.completiondays}
-              {" Days"}
+              {" Days remaining"}
             </p>
 
             <div style={{ display: "flex", gap: "10px", width: "70%" }}>

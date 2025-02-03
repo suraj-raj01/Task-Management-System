@@ -38,6 +38,17 @@ const TaskStatus = () => {
     }
   };
 
+  const deleteTask=async(taskid)=>{
+    let api = "http://localhost:8000/admin/deletetask"
+    try {
+      const response = await axios.post(api,{taskid:taskid});
+      message.success(response.data);
+      loadData();
+    } catch (error) {
+      message.error(error.response.data.msg);
+    }
+  }
+
   let sno = 0;
   const res = mydata.map((key) => {
     sno++;
@@ -58,12 +69,12 @@ const TaskStatus = () => {
             <span>{key.empreport === "success" ? (
               <i
                 class="fas fa-circle-check"
-                style={{ color: "green", fontSize: "27px" }}
+                style={{ color: "#198754", fontSize: "27px" }}
               ></i>
             ) : (
               <i
                 class="fas fa-circle-xmark"
-                style={{ color: "red", fontSize: "27px" }}
+                style={{ color: "#DC3545", fontSize: "27px" }}
               ></i>
             )}</span>
             <b>Task Status : </b>
@@ -73,14 +84,15 @@ const TaskStatus = () => {
 
             <Button
               size="sm"
+              variant="success"
               onClick={() => {
                 ReassignTask(key._id);
               }}
             >
               Re-assign Task
             </Button>
+            <Button size="sm" variant="danger" onClick={()=>{deleteTask(key._id)}}>Delete Task</Button>
           </div>
-
           <div
             style={{
               display: "flex",
@@ -90,7 +102,8 @@ const TaskStatus = () => {
               padding: "10px",
               backgroundColor:'',
             }}
-          >
+            >
+            <strong>Employee Details :</strong>
             <b>Name : {key.empid.empname.toUpperCase()}</b>
             <b>Email : <span>{key.empid.empemail}</span></b>
             <b>Designation : <span>{key.empid.designation}</span></b>
@@ -106,11 +119,12 @@ const TaskStatus = () => {
           backgroundColor:''
         }}
         >
-         <div style={{height:'100px',width:"100%", display:'flex', flexDirection:'column', alignItems:'start',justifyContent:'start',backgroundColor:'whitesmoke',padding:'10px'}}>
+         <div style={{height:'auto',width:"100%", display:'flex', flexDirection:'column', alignItems:'start',justifyContent:'start',backgroundColor:'whitesmoke',padding:'10px'}}>
+          <strong>Task Details :</strong>
          <b>Task Title : <span>{key.tasktitle}</span></b>
           <b>Task Description : <br /> <span>{key.description}</span></b>
           </div>
-          <b className="p-2">Deadline : {key.completiondays}</b>
+          <b className="p-2">Deadline Days : {key.completiondays} <span> days remaining.</span> </b>
          </div>
         </div>
       </>
