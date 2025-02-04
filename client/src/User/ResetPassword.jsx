@@ -63,6 +63,8 @@ const ResetPassword = () => {
       onFinishFailed={onFinishFailed}
       autoComplete="off"
     >
+      <b>Reset Password</b>
+      <br />
       <br />
       <Form.Item
         label="Useremail"

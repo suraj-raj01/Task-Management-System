@@ -81,5 +81,5 @@ module.exports = {
     uploadPhoto,
     displayUserTask,
     resetPassword,
-    taskStatusSave
+    taskStatusSave,
 }

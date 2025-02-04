@@ -8,7 +8,7 @@
     font-optical-sizing: auto;
     font-style: normal;
     scrollbar-width: thin; /* Width of the scrollbar */
-    scrollbar-color: #5f5f5f92 #fff;
+    scrollbar-color: #7b7a7a92 #fff;
 }
 
 #home{
@@ -16,7 +16,7 @@
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    height: 82vh;
+    height: 84vh;
 }
 
 #navbar{
@@ -96,19 +96,17 @@
     align-items: center;
     justify-content: start;
     gap: 15px;
-    /* border: 1px solid #80808092; */
     box-shadow: 0px 0px 3px #80808092;
-    padding: 30px 0px 0px 0px;
-    border-top-right-radius: 10px;
-    border-bottom-right-radius: 10px;
-    /* background-color: dodgerblue; */
+    padding: 30px 5px 0px 5px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
 }
 
 #hero #nav a{
     padding: 6px;
-    width: 200px;
+    width: 90%;
     text-align: center;
-    border-radius: 30px;
+    border-radius: 25px;
     font-weight: 500;
     box-shadow: 0 0 2px #fff;
     font-size: 14px;

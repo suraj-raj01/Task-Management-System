@@ -1,10 +1,7 @@
 import { message } from "antd";
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import Table from "react-bootstrap/Table";
 import Button from "react-bootstrap/Button";
-import { useNavigate } from "react-router-dom";
-import Form from "react-bootstrap/Form";
 
 const TaskStatus = () => {
   const [mydata, setMydata] = useState([]);
@@ -99,8 +96,7 @@ const TaskStatus = () => {
               alignItems: "start",
               justifyContent: "center",
               flexDirection: "column",
-              padding: "10px",
-              backgroundColor:'',
+              padding: "10px"
             }}
             >
             <strong>Employee Details :</strong>
@@ -124,33 +120,15 @@ const TaskStatus = () => {
          <b>Task Title : <span>{key.tasktitle}</span></b>
           <b>Task Description : <br /> <span>{key.description}</span></b>
           </div>
-          <b className="p-2">Deadline Days : {key.completiondays} <span> days remaining.</span> </b>
+          <b className="p-2" style={{color:'#DC3545'}} >Deadline Date : {key.completiondays} <span> days remaining.</span> </b>
          </div>
         </div>
       </>
     );
   });
 
-  const res1 = mydata.map((key) => {
-    return <></>;
-  });
-
   return (
     <>
-      {/* <h1 className='p-2'>TaskStatus</h1> */}
-      {/* <div id="search">
-        <Form className="d-flex">
-          <Form.Control
-            type="search"
-            placeholder="Search employee..."
-            className="me-1"
-            aria-label="Search"
-          />
-          <Button size="sm" variant="primary">
-            <i class="fas fa-magnifying-glass"></i> Search
-          </Button>
-        </Form>
-      </div> */}
       <div id="display" style={{ overflowY: "scroll" }}>
         {isVisible ? (
           <center style={{ color: "#1677ff", marginTop: "50px" }}>
