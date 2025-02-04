@@ -6,7 +6,6 @@ import axios from "axios";
 import { message } from "antd";
 
 const CompletedTask = () => {
-  const navigate = useNavigate();
   const [mydata, setMydata] = useState([]);
   const [taskstatus, setTaskstatus] = useState("");
   const [isVisible,setIsVisible] = useState(true);
@@ -82,7 +81,7 @@ const CompletedTask = () => {
               </Form.Select>
               {key.empreport === "success" ? (
                 <Button size="sm" disabled>
-                  Completed
+                  Submitted
                 </Button>
               ) : (
                 <Button

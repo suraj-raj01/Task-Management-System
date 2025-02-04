@@ -66,7 +66,8 @@ const deleteUser = async (req, res) => {
     const { id } = req.body;
     try {
         const TaskData = await TaskModel.findOne({empid:id});
-        await TaskModel.findByIdAndDelete(TaskData._id);
+        const TaskDataId = await TaskModel.findOne({_id:TaskData._id})
+        await TaskModel.findByIdAndDelete(TaskDataId._id);
         await EmployeeModel.findByIdAndDelete(id);
         res.status(200).json("User Deleted !!!");
     } catch (error) {

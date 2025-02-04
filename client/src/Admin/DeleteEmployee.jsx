@@ -56,7 +56,7 @@ const DeleteEmployee = () => {
         <td>{key.designation}</td>
         <td style={{display:'flex',gap:'10px',justifyContent:'center'}}>
           <Button variant='primary' size='sm' onClick={()=>{editEmp(key._id)}}><i class="fas fa-square-pen"></i>&nbsp; Edit</Button>
-          <Button disabled variant='danger' size='sm' onClick={()=>{deleteEmp(key._id)}}><i class="fas fa-trash"></i>&nbsp; Delete</Button>
+          <Button variant='danger' size='sm' onClick={()=>{deleteEmp(key._id)}}><i class="fas fa-trash"></i>&nbsp; Delete</Button>
         </td>
       </tr>
       </>

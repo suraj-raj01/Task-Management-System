@@ -3,7 +3,7 @@ const profilePhotoSchema = new mongoose.Schema({
     id: Number,
     imgname: {
         type: String,
-        default: "173832381325516893.jpg"
+        default: "User-Profile-PNG-Image"
     },
     empid: {
         type: mongoose.Schema.Types.ObjectId,
