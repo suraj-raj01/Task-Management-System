@@ -124,9 +124,9 @@ const taskStatus = async(req,res)=>{
 }
 
 const searchEmployee = async(req,res) =>{
-    const{empname} = req.body;
+    const{search} = req.body;
     try {
-        const Data = await EmployeeModel.find({"empname": { $regex: empname,$options:'i'}});
+        const Data = await EmployeeModel.find({"empname": { $regex: search,$options:'i'}});
         res.status(200).json(Data);
     } catch (error) {
         res.status(400).json({msg:"something went wrong!!"})

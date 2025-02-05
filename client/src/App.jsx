@@ -18,6 +18,7 @@ import UserTask from "./User/UserTask";
 import ResetPassword from "./User/ResetPassword";
 import CompletedTask from "./User/CompletedTask";
 import PendingTask from "./User/PendingTask";
+import SearchEmployee from "./Admin/SearchEmployee";
 
 
 const App = () => {
@@ -36,6 +37,7 @@ const App = () => {
               <Route path="assigntask/:id" element={<AssignTask />} />
               <Route path="taskstatus" element={<TaskStatus />} />
               <Route path="deleteemployee" element={<DeleteEmployee />} />
+              <Route path="searchemployee" element={<SearchEmployee />} />
               <Route path="editemp/:id" element={<EditEmp />} />
             </Route>
             <Route path="userdashboard" element={<UserDashboard />}>

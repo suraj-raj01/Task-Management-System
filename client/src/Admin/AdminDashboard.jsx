@@ -38,6 +38,10 @@ const AdminDashboard = () => {
     navigate("/home")
   }
 
+  const search=()=>{
+    navigate("/admindashboard/searchemployee")
+  }
+
   return (
     <>
         <h6 className='text-center p-1 fw-bold' style={{backgroundColor:'#1677ff',color:'white'}}>Admin Dashboard</h6>
@@ -45,6 +49,7 @@ const AdminDashboard = () => {
         <Button variant='primary' size='sm' onClick={Home}> <i class="fas fa-house"></i> Home</Button>
         <Button variant='primary' size='sm' onClick={profile}> <i class="fas fa-user"></i> Profile</Button>
         <Button variant='danger' size='sm'  onClick={logOut}><i class="fas fa-right-from-bracket"></i> Logout</Button>
+        <Button variant='success' size='sm'  onClick={search}><i class="fas fa-magnifying-glass"></i> Search</Button>
         </div>
         <hr />
         <div id="hero">
@@ -55,6 +60,7 @@ const AdminDashboard = () => {
             <Navbar.Brand as={Link} to="displayuser">Assign Task</Navbar.Brand>
             <Navbar.Brand as={Link} to="taskstatus">Task Status</Navbar.Brand>
             <Navbar.Brand as={Link} to="deleteemployee">Update Employee</Navbar.Brand>
+            <Navbar.Brand as={Link} to="searchemployee">Search Employee</Navbar.Brand>
             </div>
             <div id="data">
                 <Outlet/>

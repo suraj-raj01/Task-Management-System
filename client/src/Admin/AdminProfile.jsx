@@ -28,7 +28,7 @@ const AdminProfile = () => {
       <div id="profile">
         <h1>Welcome to Admin Dashboard</h1>
         <hr />
-        <div id="adminprofileimg">
+        <div id="profileimg">
           <div id="photo">
             <img
               src="https://cdn2.iconfinder.com/data/icons/rcons-user/32/male-circle-512.png"
