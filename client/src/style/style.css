@@ -104,7 +104,7 @@
 
 #hero #nav a{
     padding: 6px;
-    width: 90%;
+    width: 80%;
     text-align: center;
     border-radius: 25px;
     font-weight: 500;
@@ -137,6 +137,9 @@
     height: 60vh;
     padding: 10px 0px;
 }
+#display input{
+    box-shadow: none;
+}
 
 /* assign task */
 textarea{
@@ -156,18 +159,6 @@ h2{
 #profile{
     height: 50vh;
     text-align: start;
-}
-#adminprofileimg{
-    padding: 15px 10px;
-    display: flex;
-    align-items: center;
-    justify-content: start;
-    gap: 20px;
-    border-radius: 5px;
-    background-image: url('https://i.pinimg.com/originals/2d/e8/82/2de882cd4f3992ada3d609e3a183f7a4.jpg');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
 }
 #profileimg{
     padding: 15px 10px;
