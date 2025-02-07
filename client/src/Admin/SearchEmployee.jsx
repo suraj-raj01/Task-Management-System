@@ -24,7 +24,7 @@ const SearchEmployee = () => {
       setIsvisible(false);
     }, 800);
     setIsvisible(true);
-  }, []);
+  }, [input]);
 
   const ReassignTask = async (id) => {
     let api = "http://localhost:8000/admin/reassigntask";
@@ -142,7 +142,7 @@ const SearchEmployee = () => {
               placeholder="Search"
               className="me-2 ms-2"
               aria-label="Search"
-              name="search"
+              value={input}
               onChange={(e)=>{setInput(e.target.value)}}
             />
             <Button variant="primary">Search</Button>
