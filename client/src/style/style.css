@@ -327,6 +327,7 @@ strong {
 /* Responsive Design */
 
 @media (min-width: 320px) and (max-width: 767.98px) {
+    #navbar{height: 9vh;}
     #hero {
         height: 125vh;
         flex-direction: column;
@@ -374,6 +375,17 @@ strong {
 
     #task-status {
         width: 100%;
+    }
+    #profileimg {
+        flex-direction: column;
+    }
+    #profile h1{
+        font-size: 16px;
+        text-align: center;
+    }
+    #profile h5{
+        font-size: 14px;
+        padding: 0px 10px;
     }
 }
 
