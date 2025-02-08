@@ -80,7 +80,7 @@ const UserProfile = () => {
                 <img src={`https://task-management-system-v9oz.onrender.com/uploads/${localStorage.getItem("showphoto")}`} alt="" height='100%' width='100%'/>
                 </div>
                <Form className='d-flex'>
-              <div style={{display:'flex',flexDirection:'column',gap:'5px'}}>
+              <div style={{display:'flex',flexDirection:'column',alignItems:'center',justifyContent:'center'}}>
               <input type="file" id='file' onChange={handleFile}/>
               <Button id='btnfile' size='sm' style={{width:'80px',display:'block'}} onClick={()=>{handleSubmit(Date.now())}}>Save</Button>
               </div>
