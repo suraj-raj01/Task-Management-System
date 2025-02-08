@@ -15,7 +15,7 @@ const PendingTask = () => {
   const empid = localStorage.getItem("empid");
 
   const loadData = async () => {
-    let api = "http://localhost:8000/employee/displayusertask";
+    let api = "https://task-management-system-htjl.onrender.com/employee/displayusertask";
     try {
       const response = await axios.post(api, { Id: empid });
       setMydata(response.data);
@@ -33,7 +33,7 @@ const PendingTask = () => {
   }, []);
 
   const handleSubmit = async (id) => {
-    let api = "http://localhost:8000/employee/taskstatus";
+    let api = "https://task-management-system-htjl.onrender.com/employee/taskstatus";
     try {
       const response = await axios.post(api, {
         taskstatus: taskstatus,

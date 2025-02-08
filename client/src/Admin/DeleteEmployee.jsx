@@ -12,7 +12,7 @@ const DeleteEmployee = () => {
   const[isVisible,setIsVisible] = useState(true)
   
   const loadData=async()=>{
-    let api='http://localhost:8000/admin/displayuser';
+    let api='https://task-management-system-htjl.onrender.com/admin/displayuser';
     try {
       const response = await axios.get(api);
       setMydata(response.data);
@@ -30,7 +30,7 @@ const DeleteEmployee = () => {
   },[])
   
   const deleteEmp=async(id)=>{
-    let api = 'http://localhost:8000/admin/deleteuser';
+    let api = 'https://task-management-system-htjl.onrender.com/admin/deleteuser';
     try {
         const response = await axios.post(api,{id:id})
         message.success("Employee deleted successfully !!")
