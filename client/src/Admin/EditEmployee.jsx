@@ -16,7 +16,7 @@ const EditEmp = () => {
   const[isVisible,setIsvisible] = useState(true);
 
   const loadData = async()=>{
-    let api='https://task-management-system-htjl.onrender.com/admin/editdisplay';
+    let api='https://task-management-system-v9oz.onrender.com/admin/editdisplay';
     try {
       const response = await axios.post(api,{id:id});
       setInput(response.data);
@@ -46,7 +46,7 @@ const EditEmp = () => {
   }
 
   const handleSubmit=async()=>{
-    let api='https://task-management-system-htjl.onrender.com/admin/editsave';
+    let api='https://task-management-system-v9oz.onrender.com/admin/editsave';
     try {
       const response = await axios.post(api,{id:id,...input});
       message.success(response.data);

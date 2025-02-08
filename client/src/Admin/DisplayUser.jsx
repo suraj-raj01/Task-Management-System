@@ -12,7 +12,7 @@ const DisplayUser = () => {
   const[isVisible,setIsvisible] = useState(true);
 
   const loadData=async()=>{
-    let api='https://task-management-system-htjl.onrender.com/admin/displayuser';
+    let api='https://task-management-system-v9oz.onrender.com/admin/displayuser';
     try {
       const response = await axios.get(api);
       setMydata(response.data);

@@ -14,7 +14,7 @@ const UserTask = () => {
   const empid = localStorage.getItem("empid");
 
   const loadData=async()=>{
-    let api='https://task-management-system-htjl.onrender.com/employee/displayusertask';
+    let api='https://task-management-system-v9oz.onrender.com/employee/displayusertask';
     try {
       const response = await axios.post(api,{Id:empid});
       setMydata(response.data);
@@ -34,7 +34,7 @@ const UserTask = () => {
   },[])
 
   const handleSubmit = async(id) =>{
-    let api='https://task-management-system-htjl.onrender.com/employee/taskstatus';
+    let api='https://task-management-system-v9oz.onrender.com/employee/taskstatus';
     try {
       const response = await axios.post(api,{taskstatus:taskstatus,id:id});
       message.success(response.data);

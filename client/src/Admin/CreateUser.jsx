@@ -21,7 +21,7 @@ const CreateUser = () => {
   }
 
   const handleSubmit = async()=>{
-    let api='https://task-management-system-htjl.onrender.com/admin/usersave';
+    let api='https://task-management-system-v9oz.onrender.com/admin/usersave';
     try {
       const response = await axios.post(api,input);
       console.log(response.data);
