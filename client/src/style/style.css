@@ -7,19 +7,18 @@
     font-family: "Montserrat", serif;
     font-optical-sizing: auto;
     font-style: normal;
-    scrollbar-width: thin; /* Width of the scrollbar */
+    scrollbar-width: thin;
     scrollbar-color: #7b7a7a92 #fff;
 }
 
-#home{
-    /* background-image: url('https://img.freepik.com/premium-vector/abstract-modern-white-grey-gradient-color-geometric-line-pattern-background-graphic-design_120819-935.jpg?w=2000'); */
+#home {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
     height: 84vh;
 }
 
-#navbar{
+#navbar {
     height: 7vh;
     background-color: white;
     box-shadow: 0 0 5px #80808092;
@@ -28,13 +27,13 @@
     z-index: 2;
 }
 
-#navbar a{
+#navbar a {
     font-weight: 700;
     font-size: 1.3rem;
     color: #1677ff;
 }
 
-#form{
+#form {
     width: 500px;
     padding: 25px;
     margin: 50px auto;
@@ -44,42 +43,40 @@
     background-color: transparent;
 }
 
-
-#select{
+#select {
     margin-right: 20px;
     padding: 6px;
     width: 180px;
     border-radius: 5px;
     border: 1px solid white;
-    box-shadow: 0 0 1px grey;   
+    box-shadow: 0 0 1px grey;
     color: #3b3b3b;
     outline: none;
 }
 
-#select:hover{
+#select:hover {
     border: 1px solid blue;
 }
 
-#footer{
-    /* background-image: url('https://img.freepik.com/premium-vector/abstract-white-geometric-shape-pattern-with-gradient-color-background_120819-1712.jpg'); */
+#footer {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
     color: #3b3b3b;
     box-shadow: 0 0 1px;
 }
-#footer a{
+
+#footer a {
     font-weight: 400;
     text-decoration: none;
     color: #3b3b3b;
 }
-#footer a:hover{
+
+#footer a:hover {
     text-decoration: underline;
 }
 
-/* Admin Dashboard */
-
-#hero{
+#hero {
     height: 60vh;
     display: flex;
     align-items: center;
@@ -87,7 +84,7 @@
     width: 100%;
 }
 
-#hero #nav{
+#hero #nav {
     margin-top: 5px;
     width: 17%;
     height: 60vh;
@@ -102,7 +99,7 @@
     border-bottom-right-radius: 5px;
 }
 
-#hero #nav a{
+#hero #nav a {
     padding: 6px;
     width: 80%;
     text-align: center;
@@ -113,16 +110,18 @@
     color: white;
     background-color: #1677ff;
 }
-#hero #nav a:hover{
+
+#hero #nav a:hover {
     background-color: #004eba;
     color: white;
 }
-#hero #nav a:focus{
+
+#hero #nav a:focus {
     background-color: #004eba;
     color: #fff;
 }
 
-#hero #data{
+#hero #data {
     width: 80%;
     height: 60vh;
     text-align: center;
@@ -132,35 +131,33 @@
     justify-content: start;
 }
 
-#display{
+#display {
     width: 100%;
     height: 60vh;
     padding: 10px 0px;
 }
-#display input{
+
+#display input {
     box-shadow: none;
 }
 
-/* assign task */
-textarea{
+textarea {
     border-radius: 10px;
     border: 1px solid #80808092;
     outline: none;
     padding: 2px 10px;
 }
 
-h2{
+h2 {
     color: #1677ffc7;
 }
 
-
-/* profile */
-
-#profile{
+#profile {
     height: 50vh;
     text-align: start;
 }
-#profileimg{
+
+#profileimg {
     padding: 15px 10px;
     display: flex;
     align-items: center;
@@ -169,7 +166,8 @@ h2{
     border-radius: 5px;
     background-color: whitesmoke;
 }
-#photo{
+
+#photo {
     height: 100px;
     width: 100px;
     border-radius: 50%;
@@ -180,11 +178,12 @@ h2{
     overflow: hidden;
     background-color: white;
 }
-#photo img{
+
+#photo img {
     object-fit: cover;
 }
 
-#usertasklyt{
+#usertasklyt {
     width: 100%;
     height: 100%;
     display: flex;
@@ -195,7 +194,8 @@ h2{
     gap: 15px;
     overflow-y: scroll;
 }
-#usertask{
+
+#usertask {
     width: 45%;
     padding: 10px;
     display: flex;
@@ -209,7 +209,7 @@ h2{
     margin-bottom: 10px;
 }
 
-#usertask span{
+#usertask span {
     border: 1px solid;
     padding: 2px;
     width: 30px;
@@ -223,26 +223,26 @@ h2{
     font-weight: 500;
 }
 
-#usertask b{
+#usertask b {
     color: #3b3b3b;
 }
-#usertask p{
+
+#usertask p {
     font-weight: 500;
 }
 
-#pass{
+#pass {
     filter: blur(4px);
     transition: .5s;
 }
-#pass:hover{
+
+#pass:hover {
     filter: none;
     transition: .8s;
     cursor: default;
 }
 
-/* Dashboard buttons */
-
-#dashboard-btn{
+#dashboard-btn {
     display: flex;
     flex-direction: row-reverse;
     justify-content: end;
@@ -255,39 +255,39 @@ h2{
     z-index: 2;
 }
 
-#search{
+#search {
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: start;
     padding: 5px 0px;
 }
-#search input{
+
+#search input {
     width: 250px;
     height: 35px;
     padding: 6px 10px;
 }
 
-/* task status */
-#taskstatus td{
+#taskstatus td {
     text-align: start;
     align-content: center;
     font-size: 14px;
 }
 
-#taskdetails th{
+#taskdetails th {
     text-align: start;
     font-weight: 500;
     color: #004eba;
 }
-#tablehead th{
+
+#tablehead th {
     background-color: #1677ff;
     font-weight: 500;
     color: white;
 }
 
-/* task status */
-#task-status{
+#task-status {
     width: 75%;
     background-color: #fff;
     margin-bottom: 20px;
@@ -298,13 +298,15 @@ h2{
     margin-left: 10px;
 }
 
-#task-status b{
+#task-status b {
     font-weight: 600;
 }
-#task-status span{
+
+#task-status span {
     font-weight: 500;
 }
-#counter{
+
+#counter {
     height: 28px;
     width: 28px;
     border: 1px solid;
@@ -316,12 +318,13 @@ h2{
     background-color: whitesmoke;
     color: #004eba;
 }
-strong{
+
+strong {
     color: rgb(24, 147, 188);
     font-weight: 500;
 }
 
-/* for responsive */
+/* Responsive Design */
 
 @media (min-width: 376px) and (max-width: 767.98px) {
     #hero {
@@ -342,93 +345,104 @@ strong{
         width: 80%;
         height: 120vh;
     }
-    #dashboard-btn{
+
+    #dashboard-btn {
         justify-content: center;
         margin-top: 10px;
         margin-bottom: 10px;
     }
-    #form{
+
+    #form {
         width: 100%;
         padding: 25px;
         margin: 50px auto;
         box-shadow: 1px 1px 10px #c2c0c092;
         border-radius: 10px;
     }
+
     #dashboard-btn {
         position: relative;
         top: 0px;
         z-index: 1;
     }
+
     #usertask {
-        width: 100%; /* Adjusts width for smaller screens */
+        width: 100%;
         padding: 10px;
-        height: auto; /* Allows height to adjust dynamically */
+        height: auto;
     }
-    #task-status{
+
+    #task-status {
         width: 100%;
     }
 }
 
-/* Medium devices (tablets, 768px and up) */
 @media (min-width: 768px) and (max-width: 991.98px) {
     #hero {
-        flex-direction: row; /* Back to row layout */
-        text-align: left; /* Reset text alignment */
+        flex-direction: row;
+        text-align: left;
     }
+
     #hero #nav {
         width: 25%;
         margin-bottom: 0;
     }
-    #hero #nav  a{
+
+    #hero #nav a {
         width: 90%;
     }
-     #hero #data {
+
+    #hero #data {
         width: 60%;
     }
-    #usertasklyt{
+
+    #usertasklyt {
         overflow-y: scroll;
     }
+
     #usertask {
-        width: 90%; /* Adjusts width for tablets */
-        height: auto;
-        padding: 10px;
+        width: 90%;
     }
-    #task-status{
+
+    #task-status {
         width: 95%;
     }
 }
 
-/* Large devices (desktops, 992px and up) */
 @media (min-width: 992px) and (max-width: 1199.98px) {
     #hero {
         flex-direction: row;
         text-align: left;
     }
+
     #hero #nav {
         width: 25%;
-
     }
-     #hero #data {
+
+    #hero #data {
         width: 65%;
     }
-    #usertasklyt{
+
+    #usertasklyt {
         overflow-y: scroll;
     }
+
     #usertask {
-        width: 70%; /* Adjusts width for tablets */
+        width: 70%;
     }
-    #task-status{
+
+    #task-status {
         width: 95%;
     }
 }
 
-/* Extra large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px) {
-     #hero {
+    #hero {
         flex-direction: row;
         text-align: left;
     }
-     #hero #data {
+
+    #hero #data {
         width: 70%;
     }
 }
