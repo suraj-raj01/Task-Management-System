@@ -53,14 +53,7 @@ const TaskStatus = () => {
       <>
         <div id="task-status">
           <div
-            style={{
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "start",
-              gap: "10px",
-              padding: "15px 10px",
-              backgroundColor: "white",
-            }}
+            id="task-status-btn"
           >
             <span id="counter">{sno}</span>
             <span>{key.empreport === "success" ? (
