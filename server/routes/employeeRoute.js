@@ -19,6 +19,5 @@ route.post("/uploadphoto",upload.single('photo'),employeeController.uploadPhoto)
 route.post("/displayusertask",employeeController.displayUserTask);
 route.post("/resetpassword",employeeController.resetPassword);
 route.post("/taskstatus",employeeController.taskStatusSave);
-route.post("/userauth",employeeController.userAuth);
 
 module.exports = route;

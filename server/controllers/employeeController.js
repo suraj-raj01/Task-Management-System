@@ -1,7 +1,6 @@
 const ProfilePhoto = require("../models/profilePhotoModel");
 const EmployeeModel = require("../models/employeeModel");
 const TaskModel = require("../models/taskModel");
-const jwt = require('jsonwebtoken');
 require('dotenv').config();
 
 const userLogin = async (req, res) => {
@@ -14,25 +13,12 @@ const userLogin = async (req, res) => {
         if (User_Data.password != password) {
             res.status(400).json({ msg: "Wrong Password!!" });
         }
-        const token = jwt.sign({ userId: User_Data._id }, process.env.SECRET_KEY, {
-            expiresIn: 3*24*60*60,
-        });
-        res.status(200).json({token:token});
+        res.status(200).json(User_Data);
     } catch (error) {
         res.status(400).json({ msg: "something went wrong!!" });
     }
 }
 
-const userAuth = async(req,res)=>{
-    const token = req.header("auth-token");
-    try {
-        const decoded = jwt.verify(token,process.env.SECRET_KEY);
-        const user = await EmployeeModel.findById(decoded.userId);
-        res.status(200).json(user);
-    } catch (error) {
-        res.status(400).json({msg:"Something went wrong!!!"});
-    }
-}
 
 // upload photo for profile
 const uploadPhoto = async (req, res) => {

@@ -19,30 +19,6 @@ const Home = () => {
   const [password, setPassword] = useState("");
   const [userType, setUserType] = useState("");
 
-  const userAuth = async() =>{
-    const token = localStorage.getItem("token");
-    if(token){
-      let api = "https://task-management-system-htjl.onrender.com/employee/userauth";
-      try {
-        const response = await axios.post(api,null,{headers:{"auth-token":token}})
-        console.log(response.data)
-        localStorage.setItem("employee", response.data.empname);
-        localStorage.setItem("employeeid", response.data.empemail);
-        localStorage.setItem("designation", response.data.designation);
-        localStorage.setItem("empPass", response.data.password);
-        localStorage.setItem("empid", response.data._id);
-        navigate("/userdashboard")
-      } catch (error) {
-        message.error(error.response.data.msg);
-      }
-    }
-  }
-
-  useEffect(()=>{
-    userAuth();
-  },[])
-
-
   const handleSubmit = async () => {
     let api = "https://task-management-system-htjl.onrender.com/admin/adminlogin";
     let user_api = "https://task-management-system-htjl.onrender.com/employee/userlogin";
@@ -74,9 +50,13 @@ const Home = () => {
         if (response.status == 400) {
           message.error(response.data.msg);
         } else {
-          localStorage.setItem("token",response.data.token);
-          message.success(`Welcome ${response.data.empname.toUpperCase()} !!`);
-          navigate("/userdashboard");
+        localStorage.setItem("employee", response.data.empname);
+        localStorage.setItem("employeeid", response.data.empemail);
+        localStorage.setItem("designation", response.data.designation);
+        localStorage.setItem("empPass", response.data.password);
+        localStorage.setItem("empid", response.data._id);
+        message.success(`Welcome ${response.data.empname.toUpperCase()} !!`);
+        navigate("/userdashboard");
         }
       } catch (error) {
         message.error(error.response.data.msg);
