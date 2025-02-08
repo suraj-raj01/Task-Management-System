@@ -430,11 +430,15 @@ strong {
     }
 
     #form {
-        width: 100%;
+        width: 95%;
         padding: 25px;
         margin: 50px auto;
         box-shadow: 1px 1px 10px #c2c0c092;
         border-radius: 10px;
+    }
+
+    #form Button{
+        margin-left: -80px;
     }
 
     #dashboard-btn {
