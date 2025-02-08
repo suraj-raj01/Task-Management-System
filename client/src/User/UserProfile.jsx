@@ -80,8 +80,10 @@ const UserProfile = () => {
                 <img src={`https://task-management-system-v9oz.onrender.com/uploads/${localStorage.getItem("showphoto")}`} alt="" height='100%' width='100%'/>
                 </div>
                <Form className='d-flex'>
-               <input type="file" id='file' onChange={handleFile}/>
-               <Button id='btnfile' size='sm' style={{width:'80px',display:'block'}} onClick={()=>{handleSubmit(Date.now())}}>Save</Button>
+              <div style={{display:'flex',flexDirection:'column',gap:'5px'}}>
+              <input type="file" id='file' onChange={handleFile}/>
+              <Button id='btnfile' size='sm' style={{width:'80px',display:'block'}} onClick={()=>{handleSubmit(Date.now())}}>Save</Button>
+              </div>
                <Button id='remove' variant='danger' size='sm' style={{display:'none'}} onClick={removePhoto}>Remove photo</Button>
                </Form>
             </div>
