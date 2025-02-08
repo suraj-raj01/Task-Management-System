@@ -326,7 +326,7 @@ strong {
 
 /* Responsive Design */
 
-@media (min-width: 376px) and (max-width: 767.98px) {
+@media (min-width: 320px) and (max-width: 767.98px) {
     #hero {
         height: 125vh;
         flex-direction: column;
