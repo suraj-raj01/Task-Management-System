@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Form, Input, message, Modal } from "antd";
 import { useNavigate } from "react-router-dom";
 import Button from "react-bootstrap/Button";
@@ -18,6 +18,30 @@ const Home = () => {
   const [userid, setUserId] = useState("");
   const [password, setPassword] = useState("");
   const [userType, setUserType] = useState("");
+
+  const userAuth = async() =>{
+    const token = localStorage.getItem("token");
+    if(token){
+      let api = "http://localhost:8000/employee/userauth";
+      try {
+        const response = await axios.post(api,null,{headers:{"auth-token":token}})
+        console.log(response.data)
+        localStorage.setItem("employee", response.data.empname);
+        localStorage.setItem("employeeid", response.data.empemail);
+        localStorage.setItem("designation", response.data.designation);
+        localStorage.setItem("empPass", response.data.password);
+        localStorage.setItem("empid", response.data._id);
+        navigate("/userdashboard")
+      } catch (error) {
+        message.error(error.response.data.msg);
+      }
+    }
+  }
+
+  useEffect(()=>{
+    userAuth();
+  },[])
+
 
   const handleSubmit = async () => {
     let api = "http://localhost:8000/admin/adminlogin";
@@ -50,12 +74,8 @@ const Home = () => {
         if (response.status == 400) {
           message.error(response.data.msg);
         } else {
+          localStorage.setItem("token",response.data.token);
           message.success(`Welcome ${response.data.empname.toUpperCase()} !!`);
-          localStorage.setItem("employee", response.data.empname);
-          localStorage.setItem("employeeid", response.data.empemail);
-          localStorage.setItem("designation", response.data.designation);
-          localStorage.setItem("empPass", response.data.password);
-          localStorage.setItem("empid", response.data._id);
           navigate("/userdashboard");
         }
       } catch (error) {
