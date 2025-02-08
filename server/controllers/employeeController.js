@@ -19,7 +19,6 @@ const userLogin = async (req, res) => {
     }
 }
 
-
 // upload photo for profile
 const uploadPhoto = async (req, res) => {
     const {id} = req.body;
@@ -80,6 +79,5 @@ module.exports = {
     uploadPhoto,
     displayUserTask,
     resetPassword,
-    taskStatusSave,
-    userAuth
+    taskStatusSave
 }
