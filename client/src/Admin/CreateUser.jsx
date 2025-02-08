@@ -87,7 +87,7 @@ const CreateUser = () => {
           name="text"
           rules={[{ required: true, message: "Please input your Designation!" }]}
         >
-        <select name="designation" style={{width:'100%',padding:'5px',borderRadius:'5px',border:'1px solid #ccc',outline:'none'}} value={input.designation} onChange={handleInput}>
+        <select id='createemp' name="designation" style={{width:'100%',padding:'5px',borderRadius:'5px',border:'1px solid #ccc',outline:'none'}} value={input.designation} onChange={handleInput}>
           <option value="">Select Designation</option>
           <option value="Programmer">Programmer</option>
           <option value="Project Manager">Project Manager</option>

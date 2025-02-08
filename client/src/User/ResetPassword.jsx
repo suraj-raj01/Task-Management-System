@@ -107,8 +107,9 @@ const ResetPassword = () => {
         />
       </Form.Item>
 
-      <Form.Item label={null}>
+      <Form.Item label={null} >
         <Button
+        id="reset-pass-btn"
           type="primary"
           onClick={handleSubmit}
           style={{ width: "100%"}}
