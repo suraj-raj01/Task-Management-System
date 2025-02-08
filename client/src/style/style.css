@@ -435,14 +435,7 @@ strong {
         margin: 0px auto;
         box-shadow: 1px 1px 10px #c2c0c092;
         border-radius: 10px;
-        overflow: hidden;
-    }
-    #form #createemp{
-        text-align: center;
-        align-content: center;
-        display: flex;
-        align-items: center;
-        justify-content: center;
+        
     }
 
     #form Button{
