@@ -326,6 +326,82 @@ strong {
 
 /* Responsive Design */
 
+
+
+
+
+
+
+@media (min-width: 1200px) {
+    #hero {
+        flex-direction: row;
+        text-align: left;
+    }
+
+    #hero #data {
+        width: 70%;
+    }
+}
+
+@media (min-width: 992px) and (max-width: 1199.98px) {
+    #hero {
+        flex-direction: row;
+        text-align: left;
+    }
+
+    #hero #nav {
+        width: 25%;
+    }
+
+    #hero #data {
+        width: 65%;
+    }
+
+    #usertasklyt {
+        overflow-y: scroll;
+    }
+
+    #usertask {
+        width: 70%;
+    }
+
+    #task-status {
+        width: 95%;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+    #hero {
+        flex-direction: row;
+        text-align: left;
+    }
+
+    #hero #nav {
+        width: 25%;
+        margin-bottom: 0;
+    }
+
+    #hero #nav a {
+        width: 90%;
+    }
+
+    #hero #data {
+        width: 60%;
+    }
+
+    #usertasklyt {
+        overflow-y: scroll;
+    }
+
+    #usertask {
+        width: 90%;
+    }
+
+    #task-status {
+        width: 95%;
+    }
+}
+
 @media (min-width: 320px) and (max-width: 767.98px) {
     #navbar{height: 9vh;}
     #hero {
@@ -386,75 +462,5 @@ strong {
     #profile h5{
         font-size: 14px;
         padding: 0px 10px;
-    }
-}
-
-@media (min-width: 768px) and (max-width: 991.98px) {
-    #hero {
-        flex-direction: row;
-        text-align: left;
-    }
-
-    #hero #nav {
-        width: 25%;
-        margin-bottom: 0;
-    }
-
-    #hero #nav a {
-        width: 90%;
-    }
-
-    #hero #data {
-        width: 60%;
-    }
-
-    #usertasklyt {
-        overflow-y: scroll;
-    }
-
-    #usertask {
-        width: 90%;
-    }
-
-    #task-status {
-        width: 95%;
-    }
-}
-
-@media (min-width: 992px) and (max-width: 1199.98px) {
-    #hero {
-        flex-direction: row;
-        text-align: left;
-    }
-
-    #hero #nav {
-        width: 25%;
-    }
-
-    #hero #data {
-        width: 65%;
-    }
-
-    #usertasklyt {
-        overflow-y: scroll;
-    }
-
-    #usertask {
-        width: 70%;
-    }
-
-    #task-status {
-        width: 95%;
-    }
-}
-
-@media (min-width: 1200px) {
-    #hero {
-        flex-direction: row;
-        text-align: left;
-    }
-
-    #hero #data {
-        width: 70%;
     }
 }
