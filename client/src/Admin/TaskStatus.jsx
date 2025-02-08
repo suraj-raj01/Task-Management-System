@@ -52,6 +52,7 @@ const TaskStatus = () => {
     return (
       <>
         <div id="task-status">
+          <div id="task-status-div">
           <div
             id="task-status-btn"
           >
@@ -82,6 +83,7 @@ const TaskStatus = () => {
               Re-assign Task
             </Button>
             <Button size="sm" variant="danger" onClick={()=>{deleteTask(key._id)}}>Delete Task</Button>
+          </div>
           </div>
           <div
             style={{

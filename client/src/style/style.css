@@ -325,6 +325,9 @@ strong {
 }
 
 /* Responsive Design */
+#task-status-div{
+    overflow-x: scroll;
+}
 
 #task-status-btn{
     display: flex;
@@ -478,7 +481,10 @@ strong {
     #reset-pass-btn{
         margin-left: -10px;
     }
-    #task-status-btn{
+    #task-status-div{
         overflow-x: scroll;
+    }
+    #task-status-btn{
+        width: 500px;
     }
 }
