@@ -46,7 +46,7 @@ const UserProfile = () => {
       formData.append("photo",myfile);
       formData.append("id",id);
       formData.append("empid",empid);
-      let api = 'http://localhost:8000/employee/uploadphoto';
+      let api = 'https://task-management-system-htjl.onrender.com/employee/uploadphoto';
       try {
         const response = await axios.post(api,formData);
         message.success("profile photo saved!!");
@@ -77,7 +77,7 @@ const UserProfile = () => {
             <hr />
             <div id="profileimg">
                 <div id="photo">
-                <img src={`http://localhost:8000/uploads/${localStorage.getItem("showphoto")}`} alt="" height='100%' width='100%'/>
+                <img src={`https://task-management-system-htjl.onrender.com/uploads/${localStorage.getItem("showphoto")}`} alt="" height='100%' width='100%'/>
                 </div>
                <Form className='d-flex'>
                <input type="file" id='file' onChange={handleFile}/>

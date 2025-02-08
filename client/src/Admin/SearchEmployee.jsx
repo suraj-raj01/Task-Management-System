@@ -10,7 +10,7 @@ const SearchEmployee = () => {
   const [input, setInput] = useState("");
 
   const loadData = async () => {
-    let api = "http://localhost:8000/admin/emptaskstatus";
+    let api = "https://task-management-system-htjl.onrender.com/admin/emptaskstatus";
     try {
       const response = await axios.get(api);
       setMydata(response.data);
@@ -27,7 +27,7 @@ const SearchEmployee = () => {
   }, [input]);
 
   const ReassignTask = async (id) => {
-    let api = "http://localhost:8000/admin/reassigntask";
+    let api = "https://task-management-system-htjl.onrender.com/admin/reassigntask";
     try {
       const response = await axios.post(api, { id: id });
       message.success(response.data);
@@ -38,7 +38,7 @@ const SearchEmployee = () => {
   };
 
   const deleteTask=async(taskid)=>{
-    let api = "http://localhost:8000/admin/deletetask"
+    let api = "https://task-management-system-htjl.onrender.com/admin/deletetask"
     try {
       const response = await axios.post(api,{taskid:taskid});
       message.success(response.data);

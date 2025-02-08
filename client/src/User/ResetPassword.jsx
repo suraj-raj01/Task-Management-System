@@ -23,7 +23,7 @@ const ResetPassword = () => {
     }
 
     const handleSubmit=async()=>{
-        let api = 'http://localhost:8000/employee/resetpassword';
+        let api = 'https://task-management-system-htjl.onrender.com/employee/resetpassword';
         try {
           const response = await axios.post(api,input);
           message.success(response.data);
