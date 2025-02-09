@@ -100,6 +100,7 @@ const EditEmp = () => {
          <Form.Item
            label={null}
            rules={[{ required: true, message: "Please input your Designation!" }]}
+           id='select'
          >
          <select name='designation' style={{width:'100%',padding:'5px',borderRadius:'5px',border:'1px solid #ccc',outline:'none'}} value={input.designation} onChange={handleInput}>
            <option value="">Select Designation</option>
@@ -114,7 +115,7 @@ const EditEmp = () => {
          </Form.Item>
  
          <Form.Item label={null}>
-           <Button type="primary" onClick={handleSubmit} style={{ width: "100%" }}>
+           <Button type="primary" onClick={handleSubmit} style={{ width: "100%" }} >
              Create User
            </Button>
          </Form.Item>

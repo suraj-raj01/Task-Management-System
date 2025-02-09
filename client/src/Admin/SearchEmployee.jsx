@@ -131,7 +131,7 @@ const SearchEmployee = () => {
   return (
     <>
       <div id="display" style={{ overflowY: "scroll" }}>
-      <Form className="d-flex" style={{width:'350px'}}>
+      <Form className="d-flex" style={{width:'350px'}} id="search">
             <Form.Control
               type="search"
               placeholder="Search"

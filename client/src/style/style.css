@@ -448,9 +448,12 @@ strong {
         border-radius: 10px;
         
     }
+    select{
+        margin-left: -120px;
+    }
 
     #form Button{
-        margin-left: -80px;
+        margin-left: -120px;
     }
 
     #dashboard-btn {
@@ -458,7 +461,16 @@ strong {
         top: 0px;
         z-index: 1;
     }
+    #dashboard-btn i{
+        font-size: 8px;
+    }
+    #dashboard-btn button{
+        font-size: 10px;
+    }
 
+    #search input{
+        width: 200px;
+    }
     #usertask {
         width: 100%;
         padding: 10px 5px;
@@ -495,5 +507,8 @@ strong {
     }
     Table td{
         font-size: 10px;
+    }
+    Table td Button{
+        width: 150px;
     }
 }
