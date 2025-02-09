@@ -66,7 +66,7 @@ const DeleteEmployee = () => {
   return (
     <>
     {/* <h1 className='p-2'>DeleteEmployee</h1> */}
-    <div id="search">
+    {/* <div id="search">
         <Form className="d-flex">
           <Form.Control
             type="search"
@@ -76,7 +76,7 @@ const DeleteEmployee = () => {
           />
           <Button size="sm" variant="primary"><i class="fas fa-magnifying-glass"></i> Search</Button>
         </Form>
-      </div>
+      </div> */}
 
     <div id="display">
     {isVisible?(

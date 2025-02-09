@@ -54,7 +54,7 @@ const DisplayUser = () => {
   return (
     <>
     {/* <h1 className='p-2'>DisplayUser</h1> */}
-    <div id="search">
+    {/* <div id="search">
         <Form className="d-flex">
           <Form.Control
             type="search"
@@ -64,7 +64,7 @@ const DisplayUser = () => {
           />
           <Button size="sm" variant="primary"><i class="fas fa-magnifying-glass"></i> Search</Button>
         </Form>
-      </div>
+      </div> */}
 
     <div id="display">
     {isVisible?(
