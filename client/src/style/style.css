@@ -431,7 +431,6 @@ strong {
     #hero #data {
         width: 95%;
         padding: 5px;
-        height: 125vh;
     }
 
     #dashboard-btn {
@@ -475,7 +474,6 @@ strong {
         width: 100%;
         padding: 10px 5px;
         height: auto;
-        overflow: hidden;
     }
 
     #task-status {
@@ -510,5 +508,8 @@ strong {
     }
     Table td Button{
         width: 150px;
+    }
+    #usertask select{
+        margin-left: 0px;
     }
 }

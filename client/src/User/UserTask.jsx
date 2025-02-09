@@ -62,7 +62,7 @@ const UserTask = () => {
         <b>Completion Days</b>
         <p>{key.completiondays}{" Days remaining"}</p>
 
-          <div style={{display:'flex',gap:'10px',width:'70%'}}>
+          <div style={{display:'flex',gap:'10px',width:'90%'}}>
             <Form.Select size="sm" name='taskstatus' value={taskstatus} onChange={(e)=>setTaskstatus(e.target.value)}>
               <option  value=''>Select Task Status</option>
               <option selected value='Fully Completed'>Fully Complete</option>
