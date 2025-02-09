@@ -422,15 +422,16 @@ strong {
     }
 
     #hero #nav {
-        width: 80%;
+        width: 95%;
         height: 60vh;
         margin-bottom: 20px;
         border-radius: 10px;
     }
 
     #hero #data {
-        width: 80%;
-        height: 120vh;
+        width: 95%;
+        padding: 5px;
+        height: 125vh;
     }
 
     #dashboard-btn {
@@ -460,12 +461,14 @@ strong {
 
     #usertask {
         width: 100%;
-        padding: 10px 0px;
+        padding: 10px 5px;
         height: auto;
+        overflow: hidden;
     }
 
     #task-status {
         width: 100%;
+        padding: 5px;
     }
     #profileimg {
         flex-direction: column;
@@ -479,12 +482,18 @@ strong {
         padding: 0px 10px;
     }
     #reset-pass-btn{
-        margin-left: -10px;
+        margin-left: -20px;
     }
     #task-status-div{
         overflow-x: scroll;
     }
     #task-status-btn{
         width: 720px;
+    }
+    Table th{
+        font-size: 10px;
+    }
+    Table td{
+        font-size: 10px;
     }
 }

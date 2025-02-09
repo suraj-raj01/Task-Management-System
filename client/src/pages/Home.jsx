@@ -90,11 +90,11 @@ const Home = () => {
         style={{
           backgroundColor: "#1677ff",
           color: "white",
-          padding: "5px 0px 5px 115px",
+          padding: "10px",
           cursor: "pointer",
         }}
       >
-        <i class="fas fa-bars"></i> Menu
+        {/* <i class="fas fa-bars"></i> Menu */}
       </h6>
       {/*  */}
 
