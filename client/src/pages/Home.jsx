@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Form, Input, message, Modal } from "antd";
+import { Form, Input, message } from "antd";
 import { useNavigate } from "react-router-dom";
 import Button from "react-bootstrap/Button";
 import axios from "axios";
@@ -66,26 +66,10 @@ const Home = () => {
     }
   };
 
-  // Modals 
-  const [isModalOpen, setIsModalOpen] = useState(false);
-  const showModal = () => {
-    setIsModalOpen(true);
-  };
-  const handleOk = () => {
-    setIsModalOpen(false);
-  };
-  const handleCancel = () => {
-    setIsModalOpen(false);
-  };
-
-  const header = () => {
-    showModal();
-  };
 
   return (
     <div id='home'>
       <h6
-        onClick={header}
         className="text-start "
         style={{
           backgroundColor: "#1677ff",
@@ -172,34 +156,20 @@ const Home = () => {
           </Form.Item>
         </div>
 
-        <Form.Item label={null}>
           <Button
+           id="loginbtn"
             type="primary"
             size="sm"
             onClick={handleSubmit}
-            style={{ width: "100%", padding:'5px', fontWeight:'600' }}
+            style={{ width: "90%", padding:'5px', fontWeight:'600',marginLeft:'25px' }}
           >
             LogIn
           </Button>
-        </Form.Item>
       </Form>
       <br />
       <br />
       <br />
       <br />
-      <Modal
-        title="Appearence 🎨"
-        open={isModalOpen}
-        onOk={handleOk}
-        onCancel={handleCancel}
-      >
-        <br />
-       <div style={{display:'flex',flexDirection:'column', gap:'10px',justifyContent:'space-around'}}>
-        <Button style={{width:'220px',textAlign:'start',padding:'5px 35px'}} size="sm" variant="outline-primary"><i class="fas fa-circle-half-stroke"></i> Dark Mode</Button>
-        <Button style={{width:'220px',textAlign:'start',padding:'5px 35px'}} size="sm" variant="outline-primary"><i class="fas fa-sun"></i> Light Mode</Button>
-        <Button style={{width:'220px',textAlign:'start',padding:'5px 35px'}} size="sm" variant="outline-primary"><i class="fab fa-windows"></i> System Default</Button>
-       </div>
-      </Modal>
     </div>
   );
 };
