@@ -57,15 +57,9 @@ const SearchEmployee = () => {
     return (
       <>
         <div id="task-status">
+        <div id="task-status-div">
           <div
-            style={{
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "start",
-              gap: "10px",
-              padding: "15px 10px",
-              backgroundColor: "white",
-            }}
+            id="task-status-btn"
           >
             <span id="counter">{sno}</span>
             <span>{key.empreport === "success" ? (
@@ -94,6 +88,7 @@ const SearchEmployee = () => {
               Re-assign Task
             </Button>
             <Button size="sm" variant="danger" onClick={()=>{deleteTask(key._id)}}>Delete Task</Button>
+          </div>
           </div>
           <div
             style={{
