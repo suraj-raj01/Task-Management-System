@@ -67,7 +67,7 @@ const AssignTask = () => {
           name="description"
           rules={[{ required: true, message: "Please input your description!" }]}
         >
-         <textarea name="description" id="" rows='4' cols='37' placeholder='Description?' 
+         <textarea name="description" id="" rows='4' placeholder='Description?' 
          value={input.description} onChange={handleInput}
          ></textarea>
         </Form.Item>

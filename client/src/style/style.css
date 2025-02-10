@@ -146,6 +146,7 @@ textarea {
     border: 1px solid #80808092;
     outline: none;
     padding: 2px 10px;
+    width: 100%;
 }
 
 h2 {
@@ -415,17 +416,19 @@ strong {
 @media (min-width: 320px) and (max-width: 767.98px) {
     #navbar{height: 9vh;}
     #hero {
-        height: 125vh;
+        height: auto;
         flex-direction: column;
         align-items: center;
         text-align: center;
+        padding: 10px 0px;
     }
 
     #hero #nav {
-        width: 95%;
-        height: 60vh;
+        width: 82%;
+        height: 40vh;
         margin-bottom: 20px;
         border-radius: 10px;
+        border: 1px dotted;
     }
 
     #hero #data {
@@ -465,7 +468,7 @@ strong {
         font-size: 8px;
     }
     #dashboard-btn button{
-        font-size: 10px;
+        font-size: 12px;
     }
 
     #search input{
