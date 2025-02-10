@@ -11,6 +11,9 @@ const Layout = () => {
       <Navbar expand="lg" data-bs-theme="light" id="navbar">
         <Container>
           <Navbar.Brand as={Link} to="home">Task Management</Navbar.Brand>
+          <span style={{padding:'2px 8px',boxShadow:'0 0 1px',borderRadius:'50%'}}>
+          <i class="fas fa-moon"></i>
+          </span>
         </Container>
       </Navbar>
       <div id="layOut">
