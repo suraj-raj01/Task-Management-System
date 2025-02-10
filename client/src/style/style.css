@@ -134,7 +134,9 @@
 #display {
     width: 100%;
     height: 60vh;
-    padding: 10px 0px;
+    padding: 10px 5px;
+    overflow-y: scroll;
+    overflow-x: hidden;
 }
 
 #display input {
@@ -418,8 +420,6 @@ strong {
     #hero {
         height: 125vh;
         flex-direction: column;
-        align-items: center;
-        text-align: center;
         padding: 10px 0px;
     }
 
@@ -433,7 +433,8 @@ strong {
 
     #hero #data {
         width: 95%;
-        padding: 5px;
+        height: 75vh;
+        padding: 8px;
     }
 
     #dashboard-btn {
@@ -503,6 +504,8 @@ strong {
     }
     #task-status-btn{
         width: 720px;
+        border: 1px solid transparent;
+        border-bottom-color: #80808092;
     }
     Table th{
         font-size: 10px;
@@ -511,7 +514,7 @@ strong {
         font-size: 10px;
     }
     Table td Button{
-        width: 150px;
+        width: 130px;
     }
     #usertask select{
         margin-left: 0px;

@@ -124,7 +124,7 @@ const TaskStatus = () => {
 
   return (
     <>
-      <div id="display" style={{ overflowY: "scroll" }}>
+      <div id="display">
         {isVisible ? (
           <center style={{ color: "#1677ff", marginTop: "50px" }}>
             <img
