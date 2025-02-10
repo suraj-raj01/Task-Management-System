@@ -433,7 +433,7 @@ strong {
 
     #hero #data {
         width: 95%;
-        height: 75vh;
+        height: 77vh;
         padding: 8px;
     }
 
@@ -444,7 +444,7 @@ strong {
     }
 
     #form {
-        width: 90%;
+        width: 95%;
         padding: 25px;
         margin: 0px auto;
         box-shadow: 1px 1px 10px #c2c0c092;
@@ -483,7 +483,7 @@ strong {
 
     #task-status {
         width: 100%;
-        margin: auto;
+        margin: 15px auto;
         padding: 5px;
     }
     #profileimg {
