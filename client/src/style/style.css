@@ -424,7 +424,7 @@ strong {
     }
 
     #hero #nav {
-        width: 82%;
+        width: 85%;
         height: 40vh;
         margin-bottom: 20px;
         border-radius: 10px;
@@ -483,6 +483,7 @@ strong {
 
     #task-status {
         width: 100%;
+        margin: auto;
         padding: 5px;
     }
     #profileimg {
