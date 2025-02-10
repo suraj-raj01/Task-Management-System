@@ -156,15 +156,16 @@ const Home = () => {
           </Form.Item>
         </div>
 
-          <Button
+         <div id="home-btn">
+         <Button
            id="loginbtn"
             type="primary"
             size="sm"
             onClick={handleSubmit}
-            style={{ width: "90%", padding:'5px', fontWeight:'600',marginLeft:'25px' }}
           >
             LogIn
           </Button>
+         </div>
       </Form>
       <br />
       <br />

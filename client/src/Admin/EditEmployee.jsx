@@ -114,11 +114,11 @@ const EditEmp = () => {
          </select>
          </Form.Item>
  
-         <Form.Item label={null}>
-           <Button type="primary" onClick={handleSubmit} style={{ width: "100%" }} >
+         <div id="home-btn">
+           <Button type="primary" onClick={handleSubmit} id='loginbtn' >
              Create User
            </Button>
-         </Form.Item>
+         </div>
        </Form>
        )}
     </>

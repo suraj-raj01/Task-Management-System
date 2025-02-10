@@ -80,11 +80,11 @@ const AssignTask = () => {
           <Input type='number' name='completion' value={input.completion} onChange={handleInput} placeholder='number of days'/>
         </Form.Item>
 
-        <Form.Item label={null}>
-          <Button type="primary" style={{ width: "100%" }} onClick={handleSubmit}>
+        <div id="home-btn">
+          <Button id='loginbtn' type="primary"  onClick={handleSubmit}>
             Assign Task
           </Button>
-        </Form.Item>
+        </div>
       </Form>
     </>
   )

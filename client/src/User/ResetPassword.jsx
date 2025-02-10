@@ -106,17 +106,16 @@ const ResetPassword = () => {
           placeholder='enter your new password'
         />
       </Form.Item>
-
-      <Form.Item label={null} >
+      <div id="home-btn">
         <Button
-        id="reset-pass-btn"
+        id="loginbtn"
           type="primary"
           onClick={handleSubmit}
           style={{ width: "100%"}}
         >
           Reset Password
         </Button>
-      </Form.Item>
+      </div>
       </Form>
     )}
     </>

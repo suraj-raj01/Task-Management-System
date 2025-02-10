@@ -341,7 +341,19 @@ strong {
     background-color: white;
 }
 
+#home-btn{
+    display: flex;
+    align-items:center;
+    justify-content: center;
+    width: 90%;
+    margin: auto;
+}
 
+#loginbtn{
+    width: 100%;
+    padding: 5px;
+    font-weight: 600;
+}
 
 
 
@@ -455,10 +467,15 @@ strong {
     select{
         margin-left: -120px;
     }
-
-    #form Button{
-        margin-left: -120px;
+    #select{
+        width: 80vw;
+        margin: auto;
     }
+
+    #home-btn{
+        width: 100%;
+    }
+
 
     #dashboard-btn {
         position: relative;
@@ -472,8 +489,12 @@ strong {
         font-size: 12px;
     }
 
+    #search{
+        width: 100%;
+        padding: 0;
+    }
     #search input{
-        width: 200px;
+        width: 180px;
     }
     #usertask {
         width: 100%;
@@ -523,5 +544,10 @@ strong {
     #profileimg #file{
         width: 100%;
         padding: 5px;
+    }
+    #loginbtn{
+        width: 100%;
+        margin: auto;
+        margin-left: 0px;
     }
 }

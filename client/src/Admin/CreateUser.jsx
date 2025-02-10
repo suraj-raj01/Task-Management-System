@@ -99,11 +99,11 @@ const CreateUser = () => {
         </select>
         </Form.Item>
 
-        <Form.Item label={null}>
-          <Button type="primary" onClick={handleSubmit} style={{ width: "100%" }}>
+        <div id="home-btn">
+          <Button type="primary" id='loginbtn' onClick={handleSubmit} style={{ width: "100%" }}>
             Create Employee
           </Button>
-        </Form.Item>
+        </div>
       </Form>
         )}
         
