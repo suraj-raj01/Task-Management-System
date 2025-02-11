@@ -18,7 +18,8 @@ const Footer = () => {
             color='link'
             floating
             className='text-dark m-1'
-            href='#!'
+            href='https://www.facebook.com/profile.php?id=100029684837140'
+            target="_blank"
             role='button'
           >
             <MDBIcon fab className='fab fa-facebook-f' />
@@ -29,7 +30,8 @@ const Footer = () => {
             color='link'
             floating
             className='text-dark m-1'
-            href='#!'
+            href='https://x.com/surajk38656'
+            target="_blank"
             role='button'
           >
             <MDBIcon fab className='fa-twitter' />
@@ -51,7 +53,8 @@ const Footer = () => {
             color='link'
             floating
             className='text-dark m-1'
-            href='#!'
+            href='https://www.instagram.com/its_suraj_kr__01/'
+            target="_blank"
             role='button'
           >
             <MDBIcon fab className='fa-instagram' />
@@ -62,7 +65,8 @@ const Footer = () => {
             color='link'
             floating
             className='text-dark m-1'
-            href='#!'
+            href='https://www.linkedin.com/in/suraj-kumar-1965b0296/'
+            target="_blank"
             role='button'
           >
             <MDBIcon fab className='fa-linkedin' />
@@ -73,22 +77,21 @@ const Footer = () => {
             color='link'
             floating
             className='text-dark m-1'
-            href='#!'
+            target="_blank"
+            href='https://github.com/suraj-raj01'
             role='button'
           >
             <MDBIcon fab className='fa-github' />
           </MDBBtn>
         </section>
       </MDBContainer>
-      <MDBContainer className='p-4'>
+      <MDBContainer className='p-3'>
         <MDBRow>
           <MDBCol lg="6" md="12" className='mb-4 mb-md-0'>
             <h5 className='text-capitalize'>Task Management System</h5>
 
             <p>
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iste atque ea quis molestias.
-              Fugiat pariatur maxime quis culpa corporis vitae repudiandae aliquam voluptatem veniam,
-              est atque cumque eum delectus sint!
+            A task management system application is a software tool designed to help individuals and teams effectively plan, organize, and track their work. These applications provide a centralized platform
             </p>
           </MDBCol>
 
@@ -147,8 +150,9 @@ const Footer = () => {
       </MDBContainer>
 
       <div className='text-center p-3' style={{ backgroundColor: 'rgba(0, 0, 0, 0.2)' }}>
-        © 2025 Copyright : &nbsp; 
-         <a className='text-black' href='https://mdbootstrap.com/'>
+        Developed By SURAJ KUMAR
+        <br />
+        © 2025 Copyright everything is reserved by <a className='text-black' href='https://task-management-system-sand-one.vercel.app/'>
            TaskManagement.com
         </a>
       </div>

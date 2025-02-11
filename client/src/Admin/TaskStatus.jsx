@@ -46,6 +46,10 @@ const TaskStatus = () => {
     }
   }
 
+  const sendMsg=async(sendid)=>{
+    message.error("This functionality is temporarily unavailable!! We are working on it!!! ")
+  }
+
   let sno = 0;
   const res = mydata.map((key) => {
     sno++;
@@ -72,8 +76,19 @@ const TaskStatus = () => {
             <Button size="sm" variant="outline-primary" disabled>
               {key.taskstatus}
             </Button>
-
-            <Button
+            {key.taskstatus=="Not Complete"?(
+              <Button
+              size="sm"
+              disabled
+              variant="success"
+              onClick={() => {
+                ReassignTask(key._id);
+              }}
+            >
+              Re-assign Task
+            </Button>
+            ):(
+              <Button
               size="sm"
               variant="success"
               onClick={() => {
@@ -82,7 +97,10 @@ const TaskStatus = () => {
             >
               Re-assign Task
             </Button>
+            )}
+            
             <Button size="sm" variant="danger" onClick={()=>{deleteTask(key._id)}}>Delete Task</Button>
+            <Button size="sm" variant="primary" onClick={()=>{sendMsg(key._id)}}><i class="fas fa-paper-plane"></i> Message </Button>
           </div>
           </div>
           <div
