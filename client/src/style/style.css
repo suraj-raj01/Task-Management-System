@@ -509,10 +509,11 @@ strong {
     }
     #search input{
         width: 300px;
+        border: 1px dotted;
     }
     #usertask {
         width: 100%;
-        padding: 10px 5px;
+        padding: 10px;
         height: auto;
     }
 
