@@ -497,7 +497,7 @@ strong {
         z-index: 1;
     }
     #dashboard-btn i{
-        font-size: 8px;
+        font-size: 10px;
     }
     #dashboard-btn button{
         font-size: 12px;
@@ -508,7 +508,7 @@ strong {
         padding: 0;
     }
     #search input{
-        width: 260px;
+        width: 290px;
     }
     #usertask {
         width: 100%;
