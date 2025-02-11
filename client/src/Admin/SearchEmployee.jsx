@@ -134,8 +134,8 @@ const SearchEmployee = () => {
       <Form className="d-flex" style={{width:'350px'}} id="search">
             <Form.Control
               type="search"
-              placeholder="Search"
-              className="me-2 ms-2"
+              placeholder="Enter your full name"
+              className="me-1 ms-2"
               aria-label="Search"
               name="search"
               onChange={(e)=>{setInput(e.target.value)}}

@@ -5,7 +5,7 @@ import { Link, Outlet, useNavigate } from 'react-router-dom';
 import {message} from "antd"
 
 const AdminDashboard = () => {
-  const navigate=useNavigate();
+  const navigate = useNavigate();
 
   const[adminid,setAdminid] = useState("");
   const[adminpass,setAdminPass] = useState("");
@@ -22,7 +22,6 @@ const AdminDashboard = () => {
   useEffect(()=>{
     loadData();
   },[])
-
 
   const logOut=()=>{
     localStorage.clear();

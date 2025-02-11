@@ -66,11 +66,22 @@ const Home = () => {
     }
   };
 
+  const mode = () =>{
+    message.error(`This functionality is temporarily unavailable!! We are working on it!!! `)
+  }
 
   return (
     <div id='home'>
-      <h6
-        className="text-start "
+      <div id="mode-style">
+          <span id="mode" onClick={mode}>
+          <i class="fas fa-circle-half-stroke"></i>
+          </span>
+          <span id="mode" onClick={mode}>
+          <i class="fas fa-language"></i>
+          </span>
+          </div>
+      {/* <h6
+        className="text-center "
         style={{
           backgroundColor: "#1677ff",
           color: "white",
@@ -78,8 +89,8 @@ const Home = () => {
           cursor: "pointer",
         }}
       >
-        {/* <i class="fas fa-bars"></i> Menu */}
-      </h6>
+        <i class="fas fa-bars"></i> Menu
+      </h6> */}
       {/*  */}
 
       <br />

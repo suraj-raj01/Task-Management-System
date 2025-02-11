@@ -96,7 +96,7 @@ const TaskStatus = () => {
             >
             <strong>Employee Details :</strong>
             <b>Name : {key.empid.empname.toUpperCase()}</b>
-            <b>Email : <span>{key.empid.empemail}</span></b>
+            <b>Email : <span>{key.empid.empemail}</span></b> 
             <b>Designation : <span>{key.empid.designation}</span></b>
           </div>
 
@@ -112,7 +112,7 @@ const TaskStatus = () => {
         >
          <div style={{height:'auto',width:"100%", display:'flex', flexDirection:'column', alignItems:'start',justifyContent:'start',backgroundColor:'whitesmoke',padding:'10px'}}>
           <strong>Task Details :</strong>
-         <b>Task Title : <span>{key.tasktitle}</span></b>
+          <b>Task Title : <span>{key.tasktitle}</span></b>
           <b>Task Description : <br /> <span>{key.description}</span></b>
           </div>
           <b className="p-2" style={{color:'#DC3545'}} >Deadline Date : {key.completiondays} <span> days remaining.</span> </b>

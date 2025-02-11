@@ -355,7 +355,21 @@ strong {
     font-weight: 600;
 }
 
+#mode-style{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    font-size: 18px;
+    background-color: #1677ff;
+    width: 100%;
+}
 
+#mode{
+    font-weight: bold;
+    color: #fff;
+    cursor: pointer;
+}
 
 @media (min-width: 1200px) {
     #hero {
@@ -530,10 +544,10 @@ strong {
         border-bottom-color: #80808092;
     }
     Table th{
-        font-size: 10px;
+        font-size: 12px;
     }
     Table td{
-        font-size: 10px;
+        font-size: 12px;
     }
     Table td Button{
         width: 130px;
