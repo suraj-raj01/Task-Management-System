@@ -267,9 +267,9 @@ h2 {
 }
 
 #search input {
-    width: 250px;
-    height: 35px;
-    padding: 6px 10px;
+    width: 300px;
+    height: 40px;
+    padding: 5px 10px;
 }
 
 #taskstatus td {
@@ -508,7 +508,7 @@ strong {
         padding: 0;
     }
     #search input{
-        width: 180px;
+        width: 260px;
     }
     #usertask {
         width: 100%;
