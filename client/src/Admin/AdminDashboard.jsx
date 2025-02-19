@@ -59,7 +59,7 @@ const AdminDashboard = () => {
             <Navbar.Brand as={Link} to="displayuser">Assign Task</Navbar.Brand>
             <Navbar.Brand as={Link} to="taskstatus">Task Status</Navbar.Brand>
             <Navbar.Brand as={Link} to="deleteemployee">Update Employee</Navbar.Brand>
-            <Navbar.Brand as={Link} to="searchemployee">Search Employee</Navbar.Brand>
+            {/* <Navbar.Brand as={Link} to="searchemployee">Search Employee</Navbar.Brand> */}
             </div>
             <div id="data">
                 <Outlet/>
