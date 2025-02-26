@@ -1,8 +1,4 @@
-import { message } from "antd";
 import React, { useState, useEffect } from "react";
-import Button from "react-bootstrap/Button";
-import Form from "react-bootstrap/Form";
-import { useNavigate } from "react-router-dom";
 
 const AdminProfile = () => {
   const [admin, setAdmin] = useState("");

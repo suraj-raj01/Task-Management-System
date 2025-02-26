@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { Button, Form, Input, message, Spin} from "antd";
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+import API from '../Config';
 const onFinish = (values) => {
   console.log("Success:", values);
 };
@@ -21,7 +22,7 @@ const CreateUser = () => {
   }
 
   const handleSubmit = async()=>{
-    let api='https://task-management-system-v9oz.onrender.com/admin/usersave';
+    let api=`${API}/admin/usersave`;
     try {
       const response = await axios.post(api,input);
       console.log(response.data);

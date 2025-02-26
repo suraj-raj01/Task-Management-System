@@ -3,7 +3,7 @@ import { Form, Input, message } from "antd";
 import { useNavigate } from "react-router-dom";
 import Button from "react-bootstrap/Button";
 import axios from "axios";
-import bgimg from "../images/backgroundimg.png"
+import API from "../Config";
 
 const onFinish = (values) => {
   console.log("Success:", values);
@@ -20,8 +20,8 @@ const Home = () => {
   const [userType, setUserType] = useState("");
 
   const handleSubmit = async () => {
-    let api = "https://task-management-system-v9oz.onrender.com/admin/adminlogin";
-    let user_api = "https://task-management-system-v9oz.onrender.com/employee/userlogin";
+    let api = `${API}/admin/adminlogin`;
+    let user_api = `${API}/employee/userlogin`;
     if (userType == "admin") {
       try {
         const response = await axios.post(api, {
@@ -92,7 +92,6 @@ const Home = () => {
         <i class="fas fa-bars"></i> Menu
       </h6> */}
       {/*  */}
-
       <br />
       <br />
       <Form
@@ -110,6 +109,7 @@ const Home = () => {
         onFinishFailed={onFinishFailed}
         autoComplete="off"
       >
+        <center><b className="text-center">Login Form</b></center>
         <br />
         <Form.Item
           label="Username"

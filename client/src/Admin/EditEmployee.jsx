@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { Button, Form, Input, message } from "antd";
 import axios from 'axios';
 import { useNavigate, useParams } from 'react-router-dom';
+import API from '../Config';
 const onFinish = (values) => {
   console.log("Success:", values);
 };
@@ -16,7 +17,7 @@ const EditEmp = () => {
   const[isVisible,setIsvisible] = useState(true);
 
   const loadData = async()=>{
-    let api='https://task-management-system-v9oz.onrender.com/admin/editdisplay';
+    let api=`${API}/admin/editdisplay`;
     try {
       const response = await axios.post(api,{id:id});
       setInput(response.data);
@@ -46,7 +47,7 @@ const EditEmp = () => {
   }
 
   const handleSubmit=async()=>{
-    let api='https://task-management-system-v9oz.onrender.com/admin/editsave';
+    let api=`${API}/admin/editsave`;
     try {
       const response = await axios.post(api,{id:id,...input});
       message.success(response.data);

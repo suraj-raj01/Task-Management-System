@@ -227,7 +227,8 @@ h2 {
 }
 
 #usertask b {
-    color: #3b3b3b;
+    color: #1677ff;
+    font-weight: 600;
 }
 
 #usertask p {
@@ -407,6 +408,11 @@ strong {
     #task-status {
         width: 95%;
     }
+    #task-status-btn{
+        width: 800px;
+        border: 1px solid transparent;
+        border-bottom-color: #80808092;
+    }
 }
 
 @media (min-width: 768px) and (max-width: 991.98px) {
@@ -439,12 +445,17 @@ strong {
     #task-status {
         width: 95%;
     }
+    #task-status-btn{
+        width: 800px;
+        border: 1px solid transparent;
+        border-bottom-color: #80808092;
+    }
 }
 
 @media (min-width: 320px) and (max-width: 767.98px) {
     #navbar{height: 9vh;}
     #hero {
-        height: 125vh;
+        height: auto;
         flex-direction: column;
         padding: 10px 0px;
     }
@@ -459,8 +470,11 @@ strong {
 
     #hero #data {
         width: 95%;
-        height: 77vh;
+        height: auto;
         padding: 8px;
+    }
+    #hero #data #display{
+        height: auto;
     }
 
     #dashboard-btn {
@@ -497,7 +511,7 @@ strong {
         z-index: 1;
     }
     #dashboard-btn i{
-        font-size: 8px;
+        font-size: 10px;
     }
     #dashboard-btn button{
         font-size: 12px;
@@ -514,6 +528,9 @@ strong {
         width: 100%;
         padding: 10px 5px;
         height: auto;
+    }
+    #usertask b{
+        color: #1677ff;
     }
 
     #task-status {

@@ -5,6 +5,7 @@ import { useState,useEffect } from 'react'
 import axios from 'axios'
 import { message } from 'antd'
 import { useNavigate } from 'react-router-dom'
+import API from '../Config'
 
 const UserProfile = () => {
     const navigate = useNavigate();
@@ -46,7 +47,7 @@ const UserProfile = () => {
       formData.append("photo",myfile);
       formData.append("id",id);
       formData.append("empid",empid);
-      let api = 'https://task-management-system-v9oz.onrender.com/employee/uploadphoto';
+      let api = `${API}/employee/uploadphoto`;
       try {
         const response = await axios.post(api,formData);
         message.success("profile photo saved!!");

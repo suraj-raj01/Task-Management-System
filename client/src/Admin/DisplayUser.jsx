@@ -2,9 +2,9 @@ import { message } from 'antd';
 import axios from 'axios';
 import React, { useEffect, useState } from 'react'
 import Table from "react-bootstrap/Table"
-import Form from "react-bootstrap/Form"
 import Button from "react-bootstrap/Button"
 import { useNavigate } from 'react-router-dom';
+import API from '../Config';
 const DisplayUser = () => {
 
   const navigate = useNavigate();
@@ -12,7 +12,7 @@ const DisplayUser = () => {
   const[isVisible,setIsvisible] = useState(true);
 
   const loadData=async()=>{
-    let api='https://task-management-system-v9oz.onrender.com/admin/displayuser';
+    let api=`${API}/admin/displayuser`;
     try {
       const response = await axios.get(api);
       setMydata(response.data);

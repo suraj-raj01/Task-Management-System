@@ -3,6 +3,7 @@ import { useState } from "react";
 import { Button, Form, Input, message } from "antd";
 import axios from 'axios';
 import {useNavigate} from "react-router-dom"
+import API from '../Config';
 
 const onFinish = (values) => {
     console.log("Success:", values);
@@ -23,7 +24,7 @@ const ResetPassword = () => {
     }
 
     const handleSubmit=async()=>{
-        let api = 'https://task-management-system-v9oz.onrender.com/employee/resetpassword';
+        let api = `${API}/employee/resetpassword`;
         try {
           const response = await axios.post(api,input);
           message.success(response.data);

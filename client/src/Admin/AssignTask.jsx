@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { Button, Form, Input,DatePicker, message } from "antd";
 import axios from 'axios';
 import { useNavigate, useParams } from 'react-router-dom';
+import API from '../Config';
 const { RangePicker } = DatePicker;
 
 const onFinish = (values) => {
@@ -24,7 +25,7 @@ const AssignTask = () => {
   }
 
   const handleSubmit = async() =>{
-    let api='https://task-management-system-v9oz.onrender.com/admin/assigntask';
+    let api=`${API}/admin/assigntask`;
     try {
       const response = await axios.post(api,{id:id,...input});
       message.success(response.data);

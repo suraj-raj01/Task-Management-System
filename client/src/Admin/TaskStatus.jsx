@@ -2,13 +2,14 @@ import { message } from "antd";
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import Button from "react-bootstrap/Button";
+import API from "../Config";
 
 const TaskStatus = () => {
   const [mydata, setMydata] = useState([]);
   const [isVisible, setIsvisible] = useState(true);
 
   const loadData = async () => {
-    let api = "https://task-management-system-v9oz.onrender.com/admin/emptaskstatus";
+    let api = `${API}/admin/emptaskstatus`;
     try {
       const response = await axios.get(api);
       setMydata(response.data);
@@ -25,7 +26,7 @@ const TaskStatus = () => {
   }, []);
 
   const ReassignTask = async (id) => {
-    let api = "https://task-management-system-v9oz.onrender.com/admin/reassigntask";
+    let api = `${API}/admin/reassigntask`;
     try {
       const response = await axios.post(api, { id: id });
       message.success(response.data);
@@ -36,7 +37,7 @@ const TaskStatus = () => {
   };
 
   const deleteTask=async(taskid)=>{
-    let api = "https://task-management-system-v9oz.onrender.com/admin/deletetask"
+    let api = `${API}/admin/deletetask`
     try {
       const response = await axios.post(api,{taskid:taskid});
       message.success(response.data);

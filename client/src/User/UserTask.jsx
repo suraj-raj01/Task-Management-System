@@ -1,10 +1,10 @@
 import React, {useState, useEffect } from 'react'
-import Table from "react-bootstrap/Table"
 import { useNavigate } from 'react-router-dom'
 import Button from "react-bootstrap/Button"
 import axios from 'axios'
 import { message } from 'antd'
 import Form from 'react-bootstrap/Form';
+import API from '../Config'
 const UserTask = () => {
   const navigate = useNavigate();
   const[mydata,setMydata] = useState([]);
@@ -14,7 +14,7 @@ const UserTask = () => {
   const empid = localStorage.getItem("empid");
 
   const loadData=async()=>{
-    let api='https://task-management-system-v9oz.onrender.com/employee/displayusertask';
+    let api=`${API}/employee/displayusertask`;
     try {
       const response = await axios.post(api,{Id:empid});
       setMydata(response.data);
@@ -34,7 +34,7 @@ const UserTask = () => {
   },[])
 
   const handleSubmit = async(id) =>{
-    let api='https://task-management-system-v9oz.onrender.com/employee/taskstatus';
+    let api=`${API}/employee/taskstatus`;
     try {
       const response = await axios.post(api,{taskstatus:taskstatus,id:id});
       message.success(response.data);
