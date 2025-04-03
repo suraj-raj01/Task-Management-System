@@ -30,6 +30,12 @@ const userSave = async (req, res) => {
     const { username, useremail, designation } = req.body;
     const myPassword = RandomPass();
 
+    const checkUser = await EmployeeModel.findOne({empemail:useremail});
+    if(checkUser){
+        console.log(checkUser);
+        res.status(200).json({message:"This email already exist!!"});
+    }
+
     const mailOptions = {
         from: "surajkumarbgu26@gmail.com", // Sender email
         to: useremail,           // Recipient email

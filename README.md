@@ -47,12 +47,12 @@ cd task-management-system
 #### 2. Install dependencies:
 ##### Backend:
 ```sh
-cd backend
+cd server
 npm install
 ```
 ##### Frontend:
 ```sh
-cd frontend
+cd client
 npm install
 ```
 
@@ -76,7 +76,7 @@ cd frontend
 npm start
 ```
 
-The application will be available at `http://localhost:3000`.
+The application will be available at `http://localhost:8000`.
 
 ## API Endpoints
 | Method | Endpoint           | Description          |
